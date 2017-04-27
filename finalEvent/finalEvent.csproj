@@ -153,11 +153,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\C__MigrationHistory.cs" />
     <Compile Include="Models\database_firewall_rules.cs" />
     <Compile Include="Models\database_firewall_rules1.cs" />
     <Compile Include="Models\DbModel.cs" />
-    <Compile Include="Models\testcs.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
