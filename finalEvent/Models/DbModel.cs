@@ -7,6 +7,7 @@ namespace finalEvent.Models
 
     public partial class DbModel : DbContext
     {
+        public DbSet <User> Users { get; set; }
         public DbModel()
             : base("name=DbModel")
         {

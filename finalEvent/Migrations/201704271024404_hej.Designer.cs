@@ -13,7 +13,7 @@ namespace finalEvent.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201704271008051_hej"; }
+            get { return "201704271024404_hej"; }
         }
         
         string IMigrationMetadata.Source
