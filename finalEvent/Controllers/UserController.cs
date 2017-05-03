@@ -51,8 +51,35 @@ namespace finalEvent.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-            
+
+        public User Search(string Email)
+        {
+            using (var context = new DbModel())
+            {
+
+                return context.Users.Where(u => u.Email == Email).FirstOrDefault();
+               
+            }
+        }
+
+        public ActionResult showInfo(string Email)
+        {
+            try
+            {
+                var result = Search(Email);
+                var model = new User
+                {
+                    Firstname = result.Firstname,
+                    Lastname = result.Lastname,
+                    Picture = result.Picture
+                };
+                return View(model);
+            }
+            catch
+            {
+                return RedirectToAction("Index","Home")
+                    }
+        }
+
     }
 }
-
-
