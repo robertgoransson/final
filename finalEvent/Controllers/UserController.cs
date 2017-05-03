@@ -56,9 +56,7 @@ namespace finalEvent.Controllers
         {
             using (var context = new DbModel())
             {
-
-                return context.Users.Where(u => u.Email == Email).FirstOrDefault();
-               
+                return context.Users.Where(u => u.Email == Email).FirstOrDefault();   
             }
         }
 
@@ -77,9 +75,8 @@ namespace finalEvent.Controllers
             }
             catch
             {
-                return RedirectToAction("Index","Home")
-                    }
+                return RedirectToAction("Index", "Home");
+            }
         }
-
     }
 }
