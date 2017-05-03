@@ -40,6 +40,18 @@ namespace finalEvent.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult findPerson(string Email)
+        {
+            using (var context = new DbModel())
+            {
+                var user = context.Users.FirstOrDefault(u => u.Email.Equals(Email));
+                if (user != null)
+                    return RedirectToAction("About", "Home");
+            }
+            return RedirectToAction("Index", "Home");
+        }
+            
     }
 }
 
