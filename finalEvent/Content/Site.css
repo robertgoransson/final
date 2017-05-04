@@ -22,3 +22,18 @@ select,
 textarea {
     max-width: 280px;
 }
+
+body {
+    background-color: #708090
+}
+
+.bg-1 {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+
+.container-fluid {
+    padding-top: 13%;
+    padding-bottom: 13%;
+}
