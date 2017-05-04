@@ -29,11 +29,24 @@ namespace finalEvent.Controllers
         {
             using (var context = new DbModel())
             {
+
                 var user = context.Users.FirstOrDefault(u => u.Email.Equals(Email) && u.Password.Equals(password));
+
                 if (user != null)
+                {
+                    HttpCookie cookie = new HttpCookie("email");
+                    cookie[Email] = Email;
+                    Response.Cookies.Add(cookie);
+
+
                     return RedirectToAction("About", "Home");
+                }
+                else
+                {
+
+                    return RedirectToAction("Contact", "Home");
+                }
             }
-            return RedirectToAction("Contact","Home");
         }
         public ActionResult Logout()
         {
