@@ -22,6 +22,10 @@ namespace finalEvent.Controllers
         {
             return View();
         }
+        public ActionResult RegisterUser()
+        {
+            return View();
+        }
 
         [HttpPost]
         
@@ -83,6 +87,49 @@ namespace finalEvent.Controllers
             {
                 return RedirectToAction("About", "Home");
             }
+        }
+        [HttpPost]
+        public ActionResult RegisterUser(User newUser)
+        {
+            
+
+            try
+            {
+            
+                
+                using (var context = new DbModel())
+                {
+                   
+                    if (!context.Users.Any(u => u.Email == newUser.Email))
+                    {
+                        var user = new User
+                        {
+                            Email = newUser.Email,
+                            Password = newUser.Password,
+                            Firstname = newUser.Firstname,
+                            Lastname = newUser.Lastname,
+                            Phonenumber = newUser.Phonenumber,
+                            Picture = newUser.Picture
+                       
+                        };
+                        context.Users.Add(user);
+                        context.SaveChanges();
+                        return View(user);
+                    }
+                }
+
+
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+
+
+
+            return View();
         }
 
     }
