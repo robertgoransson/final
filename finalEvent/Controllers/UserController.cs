@@ -55,20 +55,20 @@ namespace finalEvent.Controllers
         }
 
 
-        public User Search(string Email)
+        public User Search(string Epost)
         {
             using (var context = new DbModel())
             {
 
-                return context.Users.Where(u => u.Email == Email).FirstOrDefault();
+                return context.Users.Where(u => u.Email == Epost).FirstOrDefault();
             }
         }
 
-        public ActionResult showInfo(string Email)
+        public ActionResult showInfo(string Epost)
         {
             try
             {
-                var result = Search(Email);
+                var result = Search(Epost);
                 var model = new User
                 {
                     Firstname = result.Firstname,
@@ -79,7 +79,7 @@ namespace finalEvent.Controllers
             }
             catch
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("About", "Home");
             }
         }
 

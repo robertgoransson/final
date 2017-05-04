@@ -23,13 +23,21 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                   
+                    <li>
+                       @Html.ActionLink("Sign In", "Login", "User")
+                    </li>
+                   
                 </ul>
+@if (Request.IsAuthenticated)
+{
                 @Html.BeginForm("showInfo", "User") 
-                {
+    {
                     <div class="searchBar">
-                        <input type="text" class="input-sm" name="Email" />
+                        <input type="text" class="input-sm" name="Epost" />
                     </div>
-                }
+    }
+}
             </div>
         </div>
     </div>
