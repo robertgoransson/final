@@ -37,6 +37,7 @@ namespace finalEvent.Controllers
                     HttpCookie cookie = new HttpCookie("email");
                     cookie[Email] = Email;
                     Response.Cookies.Add(cookie);
+                    FormsAuthentication.SetAuthCookie(Email, true);
 
 
                     return RedirectToAction("About", "Home");

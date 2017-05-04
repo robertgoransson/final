@@ -29,15 +29,15 @@
                     </li>
                    
                 </ul>
-@if (Request.IsAuthenticated)
-{
+                @{if (User.Identity.IsAuthenticated)
+                    {
                 @Html.BeginForm("showInfo", "User") 
-    {
+                        {
                     <div class="searchBar">
                         <input type="text" class="input-sm" name="Epost" />
                     </div>
-    }
-}
+                            }
+                        } }
             </div>
         </div>
     </div>
