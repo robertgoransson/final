@@ -9,11 +9,15 @@ namespace finalEvent.Models
     public class User
     {
         [Key]
+
+        [EmailAddress(ErrorMessage = "Epost måste ha format Exempel@test.se")]
         [StringLength(40)]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$", ErrorMessage ="Lösen ska innehålla Stor bokstav, liten bokstav och siffra")]
+        [StringLength(20, MinimumLength = 6)]
+        
         public string Password { get; set; }
 
         [Required]

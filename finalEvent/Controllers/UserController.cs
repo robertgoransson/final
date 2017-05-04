@@ -24,6 +24,7 @@ namespace finalEvent.Controllers
         }
 
         [HttpPost]
+        
 
         public ActionResult Login(string Email, string password)
         {
@@ -45,7 +46,7 @@ namespace finalEvent.Controllers
                 else
                 {
 
-                    return RedirectToAction("Contact", "Home");
+                    return View();
                 }
             }
         }
