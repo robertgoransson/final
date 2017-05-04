@@ -54,22 +54,13 @@ namespace finalEvent.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult findPerson(string Email)
-        {
-            using (var context = new DbModel())
-            {
-                var user = context.Users.FirstOrDefault(u => u.Email.Equals(Email));
-                if (user != null)
-                    return RedirectToAction("About", "Home");
-            }
-            return RedirectToAction("Index", "Home");
-        }
 
         public User Search(string Email)
         {
             using (var context = new DbModel())
             {
-                return context.Users.Where(u => u.Email == Email).FirstOrDefault();   
+
+                return context.Users.Where(u => u.Email == Email).FirstOrDefault();
             }
         }
 
@@ -91,5 +82,6 @@ namespace finalEvent.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+
     }
 }
