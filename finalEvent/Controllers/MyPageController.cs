@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using finalEvent.Models;
+using System.IO;
 
 namespace finalEvent.Controllers
 {
@@ -60,6 +61,9 @@ namespace finalEvent.Controllers
             }
         }
 
+
+
+
         [Authorize]
         [HttpPost]
         public ActionResult EditUser(User user, string Email)
@@ -76,6 +80,7 @@ namespace finalEvent.Controllers
                         myUser.Password = user.Password;
                         myUser.ConfirmPassword = user.ConfirmPassword;
                         myUser.Phonenumber = user.Phonenumber;
+                        
                     }
                     else
                     {
@@ -88,6 +93,34 @@ namespace finalEvent.Controllers
             catch
             {
                 return RedirectToAction("EditUser", "Mypage");
+            }
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult EditPicture(User user, HttpPostedFileBase file)
+        {
+            try
+            {
+                using (var context = new DbModel())
+                {
+                    var Email = User.Identity.Name;
+                    User myUser = context.Users.FirstOrDefault(u => u.Email == Email);
+                    if (user != null)
+                    {
+                        myUser.Picture = Path.GetFileName(file.FileName);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                    context.SaveChanges();
+                    return RedirectToAction("MyPage", "MyPage");
+                }
+            }
+            catch
+            {
+                return RedirectToAction("MyPage", "MyPage");
             }
         }
     }
