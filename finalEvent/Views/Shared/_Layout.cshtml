@@ -22,13 +22,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @{ if (!Request.IsAuthenticated) {
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            } }
                     @{ if (Request.IsAuthenticated)
                         {
                     <li>@Html.ActionLink("Sign Out", "Logout", "User")</li>
@@ -39,7 +40,7 @@
                     {
                         if (Request.IsAuthenticated)
                      {
-        <li>
+                     <li>
                             <div class="searchBar">
                                 <input type="text" class="input-sm" name="Epost" />
                             </div>
