@@ -114,8 +114,11 @@ namespace finalEvent.Controllers
                         };
                         context.Users.Add(user);
                         context.SaveChanges();
-                        return View(user);
+                        
+                        return RedirectToAction("About","Home");
                     }
+                    
+                    
                 }
            
 
