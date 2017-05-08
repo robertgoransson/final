@@ -29,30 +29,22 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Registrera", "RegisterUser", "User")</li>
-                   
-                    <li>
-                       @Html.ActionLink("Sign In", "Login", "User")
-                    </li>
-                   
-                </ul>
-                @{if (Request.IsAuthenticated)
-                    {
-                @Html.BeginForm("showInfo", "User") 
+                    @{ if (Request.IsAuthenticated)
                         {
-                    <div class="searchBar">
-                        <input type="text" class="input-sm" name="Epost" />
-                    </div>
-                        }
-                        {
-                            <strong>@Html.Encode(User.Identity.Name)</strong>
-                            @Html.ActionLink("Sign Out", "Logout", "User")
-                        }
-                        
-                        
+                    <li>@Html.ActionLink("Sign Out", "Logout", "User")</li>
 
+                    @using (Html.BeginForm("showInfo", "User", FormMethod.Post))
+                    {
+                        <li>
+                            <div class="searchBar">
+                                <input type="text" class="input-sm" name="Epost" />
+                            </div>
+                        </li>
                     }
-                }
+                <li><strong>@Html.Encode(User.Identity.Name)</strong></li>
+                    } }
+                </ul>
+
             </div>
         </div>
     </div>
