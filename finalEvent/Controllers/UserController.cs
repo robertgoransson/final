@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using System.Data;
 using finalEvent.Models;
+using System.IO;
 
 namespace finalEvent.Controllers
 {
@@ -89,7 +90,7 @@ namespace finalEvent.Controllers
             }
         }
         [HttpPost]
-        public ActionResult RegisterUser(User newUser)
+        public ActionResult RegisterUser(User newUser, HttpPostedFileBase file)
         {
             
 
@@ -104,14 +105,17 @@ namespace finalEvent.Controllers
                     {
                         var user = new User
                         {
+                            Picture = Path.GetFileName(file.FileName),
+
                             Email = newUser.Email,
                             Password = newUser.Password,
                             Firstname = newUser.Firstname,
                             Lastname = newUser.Lastname,
                             Phonenumber = newUser.Phonenumber,
-                            Picture = newUser.Picture,
+                         
                             ConfirmPassword = newUser.Password
                         };
+                        
                         context.Users.Add(user);
                         context.SaveChanges();
                         
@@ -134,6 +138,52 @@ namespace finalEvent.Controllers
 
             return View();
         }
+        //public ActionResult FileUpload(HttpPostedFileBase file)
+        //{
+
+        //    if (file != null)
+        //    {
+        //       DbModel db = new DbModel();
+        //        string ImageName = System.IO.Path.GetFileName(file.FileName);
+        //        string physicalPath = Server.MapPath("~/Images/" + ImageName);
+
+        //        // save image in folder
+        //        file.SaveAs(physicalPath);
+
+        //        //save new record in database
+        //        var userPicture = new User();
+        //        userPicture.Picture = ImageName;
+        //        db.Users.Add(userPicture);
+        //        db.SaveChanges();
+
+        //    }
+        //    //Display records
+        //    return View();
+        //}
+
+
+        //public ActionResult UploadPicture(HttpPostedFileBase file)
+        //{
+        //    if (file != null)
+        //    {
+        //        string pic = Path.GetFileName(file.FileName);
+        //        string path =Path.Combine(
+        //                               Server.MapPath("~/images/profile"), pic);
+
+        //        file.SaveAs(path);
+
+
+        //        using (MemoryStream ms = new MemoryStream())
+        //        {
+        //            file.InputStream.CopyTo(ms);
+        //            byte[] array = ms.GetBuffer();
+        //        }
+
+        //    }
+
+        //    return View();
+        //}
+
 
     }
 }
