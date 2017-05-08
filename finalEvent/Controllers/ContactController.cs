@@ -26,16 +26,16 @@ namespace finalEvent.Controllers
                     ReceiverEmail = receiverEmail
 
                 };
-                var request = new Friend
+                var request = new Contact
                 {
                     Accepted = false,
-                    FirstUID = receiverId,
-                    SecondUID = userId,
+                    SenderEmail = senderEmail,
+                    ReceiverEmail = receiverEmail
 
                 };
 
-                context.Friends.Add(request);
-                context.Friends.Add(friend);
+                context.Contacts.Add(request);
+                context.Contacts.Add(contact);
                 context.SaveChanges();
             }
 
