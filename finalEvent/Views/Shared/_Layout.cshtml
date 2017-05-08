@@ -32,17 +32,24 @@
                     @{ if (Request.IsAuthenticated)
                         {
                     <li>@Html.ActionLink("Sign Out", "Logout", "User")</li>
+                        } }
 
+    
                     @using (Html.BeginForm("showInfo", "User", FormMethod.Post))
                     {
-                        <li>
+                        if (Request.IsAuthenticated)
+                     {
+        <li>
                             <div class="searchBar">
                                 <input type="text" class="input-sm" name="Epost" />
                             </div>
                         </li>
-                    }
+    }
+    
+    }
+
                 <li><strong>@Html.Encode(User.Identity.Name)</strong></li>
-                    } }
+                   
                 </ul>
 
             </div>
