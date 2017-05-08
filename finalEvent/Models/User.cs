@@ -40,5 +40,7 @@ namespace finalEvent.Models
         public string Phonenumber { get; set; }
 
         public string Picture { get; set; }
+
+        
     }
 }

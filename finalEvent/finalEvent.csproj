@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyPageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -167,7 +168,12 @@
     <Compile Include="Migrations\201705081025142_updateuser.Designer.cs">
       <DependentUpon>201705081025142_updateuser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705081517177_contact.cs" />
+    <Compile Include="Migrations\201705081517177_contact.Designer.cs">
+      <DependentUpon>201705081517177_contact.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\DbModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,6 +223,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -242,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705081025142_updateuser.resx">
       <DependentUpon>201705081025142_updateuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705081517177_contact.resx">
+      <DependentUpon>201705081517177_contact.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

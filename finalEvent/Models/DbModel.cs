@@ -8,6 +8,7 @@ namespace finalEvent.Models
     public partial class DbModel : DbContext
     {
         public DbSet <User> Users { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbModel()
             : base("name=DbModel")
         {
