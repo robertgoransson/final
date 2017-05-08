@@ -109,15 +109,15 @@ namespace finalEvent.Controllers
                             Firstname = newUser.Firstname,
                             Lastname = newUser.Lastname,
                             Phonenumber = newUser.Phonenumber,
-                            Picture = newUser.Picture
-                       
+                            Picture = newUser.Picture,
+                            ConfirmPassword = newUser.Password
                         };
                         context.Users.Add(user);
                         context.SaveChanges();
                         return View(user);
                     }
                 }
-
+           
 
                 
             }
