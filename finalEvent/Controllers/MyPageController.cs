@@ -59,8 +59,10 @@ namespace finalEvent.Controllers
                 return RedirectToAction("About", "Home");
             }
         }
+
+        [Authorize]
         [HttpPost]
-        public void EditUser(User user, string Email)
+        public ActionResult EditUser(User user, string Email)
         {
             try
             {
@@ -77,15 +79,15 @@ namespace finalEvent.Controllers
                     }
                     else
                     {
-                        user.Email = Email;
-                        context.Users.Add(user);
+                        return null;
                     }
                     context.SaveChanges();
+                    return RedirectToAction("Mypage", "Mypage");
                 }
             }
             catch
             {
-                return;
+                return RedirectToAction("EditUser", "Mypage");
             }
         }
     }
