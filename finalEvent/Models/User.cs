@@ -21,14 +21,17 @@ namespace finalEvent.Models
         public string Password { get; set; }
 
         [Required]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage ="Förnamn får endast innehålla bokstäver")]
         [StringLength(20)]
         public string Firstname { get; set; }
 
         [Required]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Efternamn får endast innehålla bokstäver")]
         [StringLength(25)]
         public string Lastname { get; set; }
 
         [Required]
+        [RegularExpression(@"^[0-9]+$", ErrorMessage ="Telefonummer får endast innehålla siffror")]
         public string Phonenumber { get; set; }
 
         public string Picture { get; set; }
