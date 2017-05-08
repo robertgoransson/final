@@ -6,7 +6,13 @@
     ViewBag.Title = "MyPage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<br />
+<br />
+<br />
+<br />
+<br />
 <h2>Välkommen till din profilsida @Model.Firstname</h2>
 <p> Här kan du ändra dina uppgifter och administrera dina kontakter och event.</p>
+
+@Html.ActionLink("Ändra dina uppgifter", "EditUser", "MyPage")
 

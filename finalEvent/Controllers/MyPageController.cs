@@ -9,9 +9,13 @@ namespace finalEvent.Controllers
 {
     public class MyPageController : Controller
     {
-        
+
         // GET: MyPage
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult EditUser()
         {
             return View();
         }
@@ -53,6 +57,35 @@ namespace finalEvent.Controllers
             catch
             {
                 return RedirectToAction("About", "Home");
+            }
+        }
+        [HttpPost]
+        public void EditUser(User user, string Email)
+        {
+            try
+            {
+                using (var context = new DbModel())
+                {
+                    User myUser = context.Users.FirstOrDefault(u => u.Email == Email);
+                    if(user != null)
+                    {
+                        myUser.Firstname = user.Firstname;
+                        myUser.Lastname = user.Lastname;
+                        myUser.Password = user.Password;
+                        myUser.ConfirmPassword = user.ConfirmPassword;
+                        myUser.Phonenumber = user.Phonenumber;
+                    }
+                    else
+                    {
+                        user.Email = Email;
+                        context.Users.Add(user);
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch
+            {
+                return;
             }
         }
     }
