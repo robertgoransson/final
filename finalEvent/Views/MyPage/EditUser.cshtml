@@ -12,7 +12,8 @@
 <br />
 <h2>Här kan du ändra dina personliga uppgifter.</h2>
 
-@Html.BeginForm()
+@using (Html.BeginForm("EditUser", "MyPage", FormMethod.Post,
+                                             new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -76,3 +77,4 @@
             </div>
         </div>
     </div>
+}
