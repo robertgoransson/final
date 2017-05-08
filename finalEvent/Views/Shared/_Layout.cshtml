@@ -14,7 +14,7 @@
     @RenderSection("AddToHeadAnotherWay", required: false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -32,40 +32,30 @@
                             } }
                     @{ if (Request.IsAuthenticated)
                         {
-                    <li>@Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
+                   <li> @Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
                     <li>@Html.ActionLink("Logga ut", "Logout", "User")</li>
                         } }
-
-    
-                    @using (Html.BeginForm("showInfo", "User", FormMethod.Post))
+  
+                    <li>
+    @using (Html.BeginForm("showInfo", "User", FormMethod.Post))
                     {
                         if (Request.IsAuthenticated)
-                     {
-                     <li>
+                        {
+
                             <div class="searchBar">
                                 <input type="text" class="input-sm" name="Epost" />
                             </div>
+        }
+    }
                         </li>
-    }
+
     
-    }
 
-                <li><strong>@Html.Encode(User.Identity.Name)</strong></li>
-                   
+                <li><strong>@Html.Encode(User.Identity.Name)</strong></li>                  
                 </ul>
-
             </div>
         </div>
     </div>
-
-    <div style="width: auto; background-color: #728ea7;">
-       
-            @Html.ActionLink("Register", "Register", "User")
-            <span> | </span>
-            @Html.ActionLink("Sign In", "Login", "User")
-        
-    </div> 
-
     <div class="container body-content">
         @RenderBody()
         <hr />
