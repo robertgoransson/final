@@ -79,8 +79,7 @@ namespace finalEvent.Controllers
                         myUser.Lastname = user.Lastname;
                         myUser.Password = user.Password;
                         myUser.ConfirmPassword = user.ConfirmPassword;
-                        myUser.Phonenumber = user.Phonenumber;
-                        
+                        myUser.Phonenumber = user.Phonenumber;                        
                     }
                     else
                     {

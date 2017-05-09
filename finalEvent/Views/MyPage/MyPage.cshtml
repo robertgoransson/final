@@ -1,6 +1,6 @@
 ﻿@model finalEvent.Models.User
-@using finalEvent.Controllers;
-@using finalEvent.Models;
+@*@using finalEvent.Controllers;
+@using finalEvent.Models;*@
 
 @{
     ViewBag.Title = "MyPage";
@@ -11,13 +11,11 @@
 <h2>Välkommen till din profilsida @Model.Firstname</h2>
 <p> Här kan du ändra dina uppgifter och administrera dina kontakter och event.</p>
 <br />
-@{
-    finalEvent.Models.User db = new finalEvent.Models.User();
-}
-<img src="~/images/@Model.Picture" width="100" height="100" />
+
 @using (Html.BeginForm("EditPicture", "MyPage", FormMethod.Post,
-                                             new { enctype = "multipart/form-data" }))
-{
+                                                         new { enctype = "multipart/form-data" }))
+{<div><img src="~/images/@Model.Picture" width="100" height="100" />   </div>
+    
 <div>
     Ändra profilbild<br />
     <input type="file" name="file" id="file" style="width: 100%;" /> <br />
