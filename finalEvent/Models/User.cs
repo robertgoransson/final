@@ -41,6 +41,8 @@ namespace finalEvent.Models
 
         public string Picture { get; set; }
 
-        
+        [Required]
+        public string Message { get; set; }
+
     }
 }
