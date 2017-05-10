@@ -176,6 +176,10 @@
     <Compile Include="Migrations\201705091154392_hej1.Designer.cs">
       <DependentUpon>201705091154392_hej1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705100845419_deletemessage.cs" />
+    <Compile Include="Migrations\201705100845419_deletemessage.Designer.cs">
+      <DependentUpon>201705100845419_deletemessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\DbModel.cs" />
@@ -262,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705091154392_hej1.resx">
       <DependentUpon>201705091154392_hej1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705100845419_deletemessage.resx">
+      <DependentUpon>201705100845419_deletemessage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
