@@ -1,7 +1,6 @@
 ﻿@model finalEvent.Models.User
-
 @*@using finalEvent.Controllers;
-@using finalEvent.Models*@
+@using finalEvent.Models;*@
 
 @{
     ViewBag.Title = "MyPage";
@@ -27,28 +26,6 @@
 }
 
 @Html.ActionLink("Ändra dina uppgifter", "EditUser", "MyPage")
-<br />
-@*@using (Html.BeginForm("AddContact", "Friend", FormMethod.Post,
-                                                         new { enctype = "multipart/form-data" }))*@
-@*{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(u => u.ReceiverEmail, new { htmlAttributes = new { placeholder = "Fyll i e-post för att lägga till vän", @class = "form-control" } })
-                @Html.ValidationMessageFor(u => u.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Lägg till kontakt" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}*@
 
 
 
