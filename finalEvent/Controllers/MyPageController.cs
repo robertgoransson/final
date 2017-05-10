@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using finalEvent.Models;
 using System.IO;
+using finalEvent.Helpers;
+
 
 namespace finalEvent.Controllers
 {
@@ -44,6 +46,7 @@ namespace finalEvent.Controllers
                 var myUser = User.Identity.Name;
                 var Result = GetUser(myUser);
                 var model = new User
+
                 {
                     Firstname = Result.Firstname,
                     Lastname = Result.Lastname,

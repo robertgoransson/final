@@ -149,13 +149,23 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Controllers\EmailController.cs" />
+=======
+<<<<<<< HEAD
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\FriendController.cs" />
+=======
+    <Compile Include="Controllers\EmailController.cs" />
+>>>>>>> master
+>>>>>>> Stashed changes
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyPageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FriendHelper.cs" />
     <Compile Include="Migrations\201704271024404_hej.cs" />
     <Compile Include="Migrations\201704271024404_hej.Designer.cs">
       <DependentUpon>201704271024404_hej.cs</DependentUpon>
@@ -231,6 +241,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="Views\Contact\" />
+    <Folder Include="Views\Friend\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
