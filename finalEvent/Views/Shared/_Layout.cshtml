@@ -36,16 +36,14 @@
                    <li> @Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
                     <li>@Html.ActionLink("Logga ut", "Logout", "User")</li>
                     <li>@Html.ActionLink("Bjud in", "SendEmail", "Email")</li>
-                        } }
-  
+                        } }  
                     <li>
     @using (Html.BeginForm("showInfo", "User", FormMethod.Post))
-                    {
-                        if (Request.IsAuthenticated)
-                        {
-                            <div class="searchBar">
-                                <input type="text" class="input-sm" name="Epost" />
-                            </div>
+    {
+        if (Request.IsAuthenticated)
+        {
+            <input type="text" name="Epost" placeholder="Sök">
+
         }
     }
                         </li>                
@@ -53,7 +51,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     @{ if (Request.IsAuthenticated)
                         {
-                            <li><strong>@Html.Encode(User.Identity.Name)</strong></li>
                             <li>@Html.ActionLink("Logga ut", "Logout", "User")</li>
                         } }
                     <li>
