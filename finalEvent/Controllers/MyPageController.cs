@@ -66,7 +66,7 @@ namespace finalEvent.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult EditUser(User user, string Email)
+        public ActionResult EditUser(User user, string Email, HttpPostedFileBase file)
         {
             try
             {
@@ -75,6 +75,7 @@ namespace finalEvent.Controllers
                     User myUser = context.Users.FirstOrDefault(u => u.Email == Email);
                     if(user != null)
                     {
+                        myUser.Picture = Path.GetFileName(file.FileName);
                         myUser.Firstname = user.Firstname;
                         myUser.Lastname = user.Lastname;
                         myUser.Password = user.Password;
