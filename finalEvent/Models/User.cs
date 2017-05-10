@@ -41,9 +41,7 @@ namespace finalEvent.Models
 
         public string Picture { get; set; }
 
-        public virtual ICollection<Event> Events { get; set; }
-
-        public virtual ICollection<Contact> Contacts { get; set; }
+        
 
     }
 }
