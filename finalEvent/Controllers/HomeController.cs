@@ -26,5 +26,10 @@ namespace finalEvent.Controllers
 
             return View();
         }
+
+        public ActionResult Sent()
+        {
+            return View();
+        }
     }
 }

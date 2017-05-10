@@ -149,7 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyPageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -171,6 +171,10 @@
     <Compile Include="Migrations\201705081517177_contact.cs" />
     <Compile Include="Migrations\201705081517177_contact.Designer.cs">
       <DependentUpon>201705081517177_contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705091154392_hej1.cs" />
+    <Compile Include="Migrations\201705091154392_hej1.Designer.cs">
+      <DependentUpon>201705091154392_hej1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -201,7 +205,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -215,10 +221,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\User\ShowInfo.cshtml" />
     <Content Include="Views\User\RegisterUser.cshtml" />
     <Content Include="Views\MyPage\MyPage.cshtml" />
     <Content Include="Views\MyPage\EditUser.cshtml" />
+    <Content Include="Views\Email\SendEmail.cshtml" />
+    <Content Include="Views\Home\Sent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -252,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705081517177_contact.resx">
       <DependentUpon>201705081517177_contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705091154392_hej1.resx">
+      <DependentUpon>201705091154392_hej1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

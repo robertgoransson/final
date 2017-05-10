@@ -38,9 +38,9 @@ namespace finalEvent.Controllers
 
                 var user = context.Users.FirstOrDefault(u => u.Email.Equals(Email) && u.Password.Equals(password));
 
-                if (user != null)
+                if (user != null && ModelState.IsValid)
                 {
-                    HttpCookie cookie = new HttpCookie("email");
+                    HttpCookie cookie = new HttpCookie("Email");
                     cookie[Email] = Email;
                     Response.Cookies.Add(cookie);
                     FormsAuthentication.SetAuthCookie(Email, true);

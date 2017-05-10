@@ -29,10 +29,17 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            } }
+                   
+                        } }
                     @{ if (Request.IsAuthenticated)
                         {
+
                    <li> @Html.ActionLink("Min sida ", "MyPage", "MyPage")</li>
+
+                   <li> @Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
+                    <li>@Html.ActionLink("Logga ut", "Logout", "User")</li>
+                    <li>@Html.ActionLink("Bjud in", "SendEmail", "Email")</li>
+
                         } }
   
                     <li>
