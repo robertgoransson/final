@@ -27,7 +27,7 @@ namespace finalEvent.Models
           [ForeignKey("Email")]
         public string Owner { get; set; }
      
-        public virtual User Email { get; set; }
+        public virtual User Email { get; set;  }
 
 
 
