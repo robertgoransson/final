@@ -41,23 +41,25 @@ namespace finalEvent.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SendEmail(string email, string firstname, string messages)
+        public async Task<ActionResult> SendEmail(string email)
         {
+            
 
              
 
             if (ModelState.IsValid)
-            { 
+            {
 
-               
 
-                    
-                        var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
+
+                var user = User.Identity.Name.ToString();
+                        var body = "<p>Inbjudan från:{0}</br>Kul! Nu har även du lyckats bli inbjuden till ett evenemang din populäre jäkel. Följ länken nedan</p></br> <a href=\"http://www.sportbladet.se/\">Till Evenemanget</a>";
+                
                         var message = new MailMessage();
-                        message.To.Add(new MailAddress(email));  // replace with valid value 
-                        message.From = new MailAddress(User.Identity.Name); // replace with valid value
-                        message.Subject = "Your email subject";
-                        message.Body = string.Format(body, firstname, email, messages);
+                        message.To.Add(new MailAddress(email));  
+                        message.From = new MailAddress(this.User.Identity.Name); 
+                        message.Subject = "Inbjudan till event";
+                        message.Body = string.Format(body, user);
                         message.IsBodyHtml = true;
 
                         using (var smtp = new SmtpClient())
