@@ -60,6 +60,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -180,9 +183,14 @@
     <Compile Include="Migrations\201705100845419_deletemessage.Designer.cs">
       <DependentUpon>201705100845419_deletemessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705101027262_event.cs" />
+    <Compile Include="Migrations\201705101027262_event.Designer.cs">
+      <DependentUpon>201705101027262_event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\DbModel.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -269,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705100845419_deletemessage.resx">
       <DependentUpon>201705100845419_deletemessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705101027262_event.resx">
+      <DependentUpon>201705101027262_event.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
