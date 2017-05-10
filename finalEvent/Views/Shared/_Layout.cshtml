@@ -33,19 +33,9 @@
                         } }
                     @{ if (Request.IsAuthenticated)
                         {
-
-
-                   <li> @Html.ActionLink("Min sida ", "MyPage", "MyPage")</li>
-
                    <li> @Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
                     <li>@Html.ActionLink("Logga ut", "Logout", "User")</li>
                     <li>@Html.ActionLink("Bjud in", "SendEmail", "Email")</li>
-
-
-                   <li> @Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
-         
-                   <li> @Html.ActionLink("Min sida ", "MyPage", "MyPage")</li>
-
                         } }
   
                     <li>
@@ -58,8 +48,7 @@
                             </div>
         }
     }
-                        </li>
-                
+                        </li>                
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @{ if (Request.IsAuthenticated)
@@ -67,7 +56,6 @@
                             <li><strong>@Html.Encode(User.Identity.Name)</strong></li>
                             <li>@Html.ActionLink("Logga ut", "Logout", "User")</li>
                         } }
-
                     <li>
 </ul>
             </div>
