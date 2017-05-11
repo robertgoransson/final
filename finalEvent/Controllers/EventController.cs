@@ -10,10 +10,12 @@ namespace finalEvent.Controllers
     public class EventController : Controller
     {
         // GET: Event
+        [HttpGet]
         public ActionResult CreateEvent()
         {
             return View();
         }
+        [HttpPost]
 
         public ActionResult CreateEvent(Event newEvent)
         {
@@ -35,11 +37,11 @@ namespace finalEvent.Controllers
 
 
                     };
-                    return RedirectToAction("Created", "Home");
+                    return RedirectToAction("Sent", "Home");
                 }
             }
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
