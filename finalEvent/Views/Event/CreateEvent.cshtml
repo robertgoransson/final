@@ -1,0 +1,38 @@
+﻿@model finalEvent.Models.Event
+@{
+    ViewBag.Title = "CreateEvent";
+}
+
+<h2>Här skapar du ditt evenemang</h2>
+
+@using (Html.BeginForm("CreateEvent", "Event", FormMethod.Post,
+                                                         new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+          
+
+            <div class="col-md-10">
+                @Html.EditorFor(u => u.EventName, new { htmlAttributes = new { placeholder = "Evenemangsnamn", @class = "form-control" } })
+                @Html.ValidationMessageFor(u => u.EventName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Skapa Event" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}
+
+        @section scripts
+{
+            @Scripts.Render("~/bundles/jqueryval")
+        }

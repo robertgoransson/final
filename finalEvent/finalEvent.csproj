@@ -153,6 +153,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyPageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -238,11 +239,15 @@
     <Content Include="Views\MyPage\EditUser.cshtml" />
     <Content Include="Views\Email\SendEmail.cshtml" />
     <Content Include="Views\Home\Sent.cshtml" />
+    <Content Include="Views\User\ShowInfo.cshtml" />
+    <Content Include="Views\Event\CreateEvent.cshtml" />
+    <Content Include="Views\Home\Created.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="Views\Contact\" />
+    <Folder Include="Views\Created\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
