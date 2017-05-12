@@ -1,45 +1,69 @@
-﻿using finalEvent.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using finalEvent.Models;
+using finalEvent.Helpers;
 
 namespace finalEvent.Controllers
 {
     public class ContactController : Controller
     {
-        // GET: Contact
-        public ActionResult Index()
+        FriendHelper _friendHelper = new FriendHelper();
+        // GET: Friend
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        public ActionResult AddContact()
         {
             return View();
         }
 
-        public ActionResult AddContact(string senderEmail, string receiverEmail)
+        //public User GetUser(string Email)
+        //{
+        //    try
+        //    {
+        //        using (var context = new DbModel())
+        //        {
+        //            return context.Users.FirstOrDefault(u => u.Email == Email);
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //}
+
+        [HttpPost]
+        public ActionResult AddContact(Contact newContact)
         {
-            using (var context = new DbModel())
+            try
             {
-                var contact = new Contact
+                using (var context = new DbModel())
                 {
-                    Accepted = true,
-                    SenderEmail = senderEmail,
-                    ReceiverEmail = receiverEmail
+                    {
 
-                };
-                var request = new Contact
-                {
-                    Accepted = false,
-                    SenderEmail = senderEmail,
-                    ReceiverEmail = receiverEmail
 
-                };
+                        var friend = new Contact
+                        {
+                            ReceiverEmail = newContact.ReceiverEmail,
+                            SenderEmail = User.Identity.Name                            
+                        };
 
-                context.Contacts.Add(request);
-                context.Contacts.Add(contact);
-                context.SaveChanges();
+                        context.Contacts.Add(friend);
+                        context.SaveChanges();
+
+                        return RedirectToAction("About", "Home");
+
+                    }
+                }
             }
-
-            return View();
+            catch 
+            {
+                return null;
+            }
         }
     }
 }

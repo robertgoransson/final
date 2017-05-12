@@ -1,0 +1,25 @@
+﻿@model finalEvent.Helpers.FriendHelper
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Contact</h2>
+
+@using (Html.BeginForm("AddContact", "Contact", FormMethod.Post,
+                                                         new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.EditorFor(u => u.ContactModel.ReceiverEmail, new { htmlAttributes = new { placeholder = "E-post", @class = "form-control" } })
+            </div>
+        </div>
+        </div>
+}

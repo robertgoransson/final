@@ -28,12 +28,13 @@
                     @{ if (!Request.IsAuthenticated) {
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Friend", "Contact", "Home")</li>
                    
                         } }
                     @{ if (Request.IsAuthenticated)
                         {
                    <li> @Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
+                   <li>@Html.ActionLink("Lägg till vänner", "Contact","Contact")</li>
                     <li>@Html.ActionLink("Bjud in", "SendEmail", "Email")</li>
                     <li>@Html.ActionLink("Skapa Event", "CreateEvent", "Event")</li>
                     <li>@Html.ActionLink("Mina Event", "MyEvents", "Event")</li>

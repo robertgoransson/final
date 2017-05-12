@@ -154,12 +154,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyPageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FriendHelper.cs" />
     <Compile Include="Migrations\201704271024404_hej.cs" />
     <Compile Include="Migrations\201704271024404_hej.Designer.cs">
       <DependentUpon>201704271024404_hej.cs</DependentUpon>
@@ -243,11 +245,11 @@
     <Content Include="Views\Event\CreateEvent.cshtml" />
     <Content Include="Views\Home\Created.cshtml" />
     <Content Include="Views\Event\MyEvents.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\Contact\" />
     <Folder Include="Views\Created\" />
   </ItemGroup>
   <ItemGroup>
