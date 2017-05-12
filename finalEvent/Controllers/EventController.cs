@@ -37,6 +37,8 @@ namespace finalEvent.Controllers
 
 
                     };
+                    context.Events.Add(events);
+                    context.SaveChanges();
                     return RedirectToAction("Sent", "Home");
                 }
             }
