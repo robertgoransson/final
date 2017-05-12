@@ -1,7 +1,4 @@
 ﻿@model finalEvent.Models.User
-@*@using finalEvent.Controllers;
-@using finalEvent.Models;*@
-
 @{
     ViewBag.Title = "MyPage";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,11 +12,6 @@
 @using (Html.BeginForm("EditPicture", "MyPage", FormMethod.Post,
                                                          new { enctype = "multipart/form-data" }))
 {<div><img src="~/images/@Model.Picture" width="100" height="100" />   </div>
-    
-
-<div class="col-md-offset-2 col-md-10">
-    <input type="submit" value="Ändra bild" class="btn btn-default" />
-</div>
 }
 
 @Html.ActionLink("Ändra dina uppgifter", "EditUser", "MyPage")

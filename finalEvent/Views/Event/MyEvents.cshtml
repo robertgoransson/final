@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "MyEvents";
+    var events = (List<string>)ViewBag.Event;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Här har du en översikt över dina skapade event.</h2>
+
+
+<br />
+@{
+
+    foreach (var even in events)
+    {
+<p>@even</p>
+    }
+}
