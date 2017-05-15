@@ -1,0 +1,32 @@
+﻿@model IEnumerable<finalEvent.Models.EventAttendee>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deltagare</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AttendeeEmail.Email)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attendes)
+        </td>
+        <td>
+        </td>
+    </tr>
+}
+
+</table>

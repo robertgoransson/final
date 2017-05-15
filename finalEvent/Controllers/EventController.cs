@@ -71,5 +71,41 @@ namespace finalEvent.Controllers
             return View(myEvents);
 
         }
+
+        public List <EventAttendee> GetAttendees(int id)
+        {
+            try
+            {
+                using (var context = new DbModel())
+                {
+                    var eventID = id;
+                    {
+                        return context.EventAttendees.Where(e => e.IdEvent == eventID).ToList();
+                    }
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public ActionResult Attendee(int id)
+        {
+            var att = GetAttendees(id);
+            return View(att);
+        }
+        //public ActionResult Attendee(int id)
+        //{
+        //    try
+        //    {
+        //        using (var context = new DbModel())
+        //        {
+        //            var myEvent = id;
+        //            {
+        //                return context.EventAttendees.f
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
