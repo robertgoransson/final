@@ -1,4 +1,4 @@
-﻿@model finalEvent.Helpers.FriendHelper
+﻿@model finalEvent.Models.Contact
 @{
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,7 +18,12 @@
         <div class="form-group">
 
             <div class="col-md-10">
-                @Html.EditorFor(u => u.ContactModel.ReceiverEmail, new { htmlAttributes = new { placeholder = "E-post", @class = "form-control" } })
+                @Html.EditorFor(u => u.ReceiverEmail, new { htmlAttributes = new { placeholder = "E-post", @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Skapa kontakt" class="btn btn-default" />
             </div>
         </div>
         </div>
