@@ -211,6 +211,14 @@
     <Compile Include="Migrations\201705151132576_sdgdfg.Designer.cs">
       <DependentUpon>201705151132576_sdgdfg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705151359099_locationnn.cs" />
+    <Compile Include="Migrations\201705151359099_locationnn.Designer.cs">
+      <DependentUpon>201705151359099_locationnn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705151403114_hehjdf.cs" />
+    <Compile Include="Migrations\201705151403114_hehjdf.Designer.cs">
+      <DependentUpon>201705151403114_hehjdf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\DbModel.cs" />
@@ -327,6 +335,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705151132576_sdgdfg.resx">
       <DependentUpon>201705151132576_sdgdfg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151359099_locationnn.resx">
+      <DependentUpon>201705151359099_locationnn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151403114_hehjdf.resx">
+      <DependentUpon>201705151403114_hehjdf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

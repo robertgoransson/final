@@ -55,6 +55,12 @@
                             @Html.ValidationMessageFor(u => u.EndHour, "", new { @class = "text-danger" })
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(u => u.Locations, new { htmlAttributes = new { placeholder = "Sluttid", @class = "form-control" } })
+                            @Html.ValidationMessageFor(u => u.Locations, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
 
                     <div class="form-group">

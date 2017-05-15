@@ -6,6 +6,7 @@ using System.Security;
 using System.Web;
 using System.Data.Entity.Spatial;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.UI;
 
 namespace finalEvent.Models
 {
@@ -31,7 +32,8 @@ namespace finalEvent.Models
         public DateTime EndHour { get; set; }
         public string  Description { get; set; }
         public DbGeography Location { get; set; }
-          [ForeignKey("Email")]
+      
+        [ForeignKey("Email")]
         public string Owner { get; set; }
      
         public virtual User Email { get; set; }
