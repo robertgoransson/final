@@ -56,7 +56,7 @@ namespace finalEvent.Controllers
                 {
                     var myUser = User.Identity.Name;
                     {   
-                        return context.Events.Where(e => e.Owner == myUser).ToList(); 
+                        return context.Events.Where(e => e.Owner == myUser).OrderBy(e => e.StartDate).ToList(); 
                     }
                 }
             }
@@ -67,8 +67,9 @@ namespace finalEvent.Controllers
         }       
         public ActionResult MyEvents()
         {
-            ViewBag.Event = GetEvents().Select(e => e.StartDate).ToList();
-            return View();
+            var myEvents = GetEvents();
+            return View(myEvents);
+
         }
     }
 }

@@ -1,19 +1,43 @@
-﻿
+﻿@model IEnumerable<finalEvent.Models.Event>
+
 @{
     ViewBag.Title = "MyEvents";
-    var events = (List<string>)ViewBag.Event;
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
 
-<h2>Här har du en översikt över dina skapade event.</h2>
+<h2>Mina skapade event</h2>
 
+<table class="table">
+    <tr>
 
-<br />
-@{
+        <th>
+            Evenemang
+        </th>
+        <th>
+            Datum
+        </th>
 
-    foreach (var even in events)
+        <th>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
     {
-<p>@even</p>
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
+            </td>
+        </tr>
     }
-}
+
+</table>
