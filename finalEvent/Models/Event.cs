@@ -19,10 +19,15 @@ namespace finalEvent.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime StartDate  { get; set; }
-        public DateTime EndingDate { get; set; }
-       
-        public DateTime StartHour { get; set;  }
+        public string  StartDate  { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public string EndingDate { get; set; }
+        [DataType(DataType.Time)]
+        [DisplayFormat(DataFormatString = "{0:hh/mm}", ApplyFormatInEditMode = true)]
+        public string StartHour { get; set;  }
+        [DataType(DataType.Time)]
+        [DisplayFormat(DataFormatString = "{0:hh/mm}", ApplyFormatInEditMode = true)]
         public DateTime EndHour { get; set; }
         public string  Description { get; set; }
         public DbGeography Location { get; set; }

@@ -194,6 +194,22 @@
     <Compile Include="Migrations\201705151042136_deltagare.Designer.cs">
       <DependentUpon>201705151042136_deltagare.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705151051054_hej2.cs" />
+    <Compile Include="Migrations\201705151051054_hej2.Designer.cs">
+      <DependentUpon>201705151051054_hej2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705151120157_tid.cs" />
+    <Compile Include="Migrations\201705151120157_tid.Designer.cs">
+      <DependentUpon>201705151120157_tid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705151125442_tid1.cs" />
+    <Compile Include="Migrations\201705151125442_tid1.Designer.cs">
+      <DependentUpon>201705151125442_tid1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705151132576_sdgdfg.cs" />
+    <Compile Include="Migrations\201705151132576_sdgdfg.Designer.cs">
+      <DependentUpon>201705151132576_sdgdfg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\DbModel.cs" />
@@ -296,6 +312,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705151042136_deltagare.resx">
       <DependentUpon>201705151042136_deltagare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151051054_hej2.resx">
+      <DependentUpon>201705151051054_hej2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151120157_tid.resx">
+      <DependentUpon>201705151120157_tid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151125442_tid1.resx">
+      <DependentUpon>201705151125442_tid1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151132576_sdgdfg.resx">
+      <DependentUpon>201705151132576_sdgdfg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
