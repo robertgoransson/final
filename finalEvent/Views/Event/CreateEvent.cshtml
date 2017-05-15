@@ -5,7 +5,15 @@
 @section scripts
     {
     <script src="@Url.Content("~/Scripts/javascripts.js")"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqDWswZRSUOm42IpQq6cN6aPWjc7MXIgU&libraries=places"></script>
+    <script>
+            function init() {
+                var input = document.getElementById('locationTextField');
+                var autocomplete = new google.maps.places.Autocomplete(input);
+            }
 
+            google.maps.event.addDomListener(window, 'load', init);
+</script>
 
 @Scripts.Render("~/bundles/jqueryval")
   
@@ -62,7 +70,7 @@
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            @Html.EditorFor(u => u.Address, new { htmlAttributes = new { placeholder = "Sluttid", @class = "form-control" } })
+                            @Html.EditorFor(u => u.Address, new { htmlAttributes = new { id = string.Format("locationTextField") ,placeholder = "Sök på adress", @class = "form-control" } })
                             @Html.ValidationMessageFor(u => u.Address, "", new { @class = "text-danger" })
                         </div>
                     </div>
