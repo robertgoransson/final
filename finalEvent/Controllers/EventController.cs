@@ -66,8 +66,8 @@ namespace finalEvent.Controllers
             }
         }       
         public ActionResult MyEvents()
-        {          
-            ViewBag.Event = GetEvents().Select(e => e.EventName).ToList();
+        {
+            ViewBag.Event = GetEvents().Select(e => e.StartDate).ToList();
             return View();
         }
     }
