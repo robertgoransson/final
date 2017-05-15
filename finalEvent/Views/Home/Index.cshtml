@@ -6,12 +6,16 @@
     ViewBag.Title = "Home Page";
 }
 
+
 <div class="container-fluid bg-1 text-center">
     <div class="row">
         <div class="col-md-12">
             <section id="loginForm">
-                @using (Html.BeginForm("Login", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
+@{ if (!Request.IsAuthenticated)
+    {
+                using (Html.BeginForm("Login", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+
                     @Html.AntiForgeryToken()
                     <h3>Logga in med hjälp av ditt evenemangskonto!</h3>
                     <hr />
@@ -34,15 +38,22 @@
                             
                         </div>
                     </div>
-                    <p>
-                        @Html.ActionLink("Registrera ny användare", "RegisterUser", "User")
-                    </p>
+
                 }
+        }
+    }
             </section>
         </div>
     </div>
+    
 </div>
+    
+<div class="container-fluid bg-1 text-center">
+    <p>
+        @Html.ActionLink("Registrera ny användare", "RegisterUser", "User")
+    </p>
+    </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
