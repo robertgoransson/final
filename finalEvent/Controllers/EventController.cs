@@ -72,6 +72,7 @@ namespace finalEvent.Controllers
 
         }
 
+<<<<<<< Updated upstream
         public List <EventAttendee> GetAttendees(int id)
         {
             try
@@ -107,5 +108,28 @@ namespace finalEvent.Controllers
         //        }
         //    }
         //}
+=======
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                using (var context  = new DbModel())
+                {
+                    
+                    var deleteEvent = context.Events.First(e => e.EventId == id);
+                   
+                    
+                        context.Events.Remove(deleteEvent);
+                    context.SaveChanges();
+                }
+                return RedirectToAction("MyEvents", "Event");
+                
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Shared");
+            }
+        }
+>>>>>>> Stashed changes
     }
 }
