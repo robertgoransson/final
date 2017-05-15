@@ -8,9 +8,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace finalEvent.Models
 {
-    public class EventAttendees
+    public class EventAttendee
     {
-        
+        [Key]
+        public int Key { get; set; }
         [ForeignKey("Event")]
         public int IdEvent { get; set; }
 
