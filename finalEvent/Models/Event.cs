@@ -16,7 +16,9 @@ namespace finalEvent.Models
         [Required(ErrorMessage ="Eventet måste ha ett namn.")]
         
         public string EventName { get; set; }
-    
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime StartDate  { get; set; }
         public DateTime EndingDate { get; set; }
        

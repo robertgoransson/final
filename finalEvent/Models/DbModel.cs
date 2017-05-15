@@ -10,6 +10,8 @@ namespace finalEvent.Models
         public DbSet <User> Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Event> Events { get; set; }
+
+        public DbSet<EventAttendee>EventAttendees { get; set; }
         public DbModel()
             : base("name=DbModel")
         {
