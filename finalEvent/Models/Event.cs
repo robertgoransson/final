@@ -31,8 +31,8 @@ namespace finalEvent.Models
         [DisplayFormat(DataFormatString = "{0:hh/mm}", ApplyFormatInEditMode = true)]
         public DateTime EndHour { get; set; }
         public string  Description { get; set; }
-        public DbGeography Location { get; set; }
-      
+     
+        public string Address { get; set; }
         [ForeignKey("Email")]
         public string Owner { get; set; }
      

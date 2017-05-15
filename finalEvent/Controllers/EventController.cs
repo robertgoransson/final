@@ -33,7 +33,7 @@ namespace finalEvent.Controllers
                         StartHour = newEvent.StartHour,
                         EndingDate = newEvent.EndingDate,
                         EndHour = newEvent.EndHour,
-                        Location = newEvent.Location,
+                        Address = newEvent.Address,
                         Owner = User.Identity.Name.ToString()
 
 

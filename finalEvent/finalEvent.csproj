@@ -219,6 +219,14 @@
     <Compile Include="Migrations\201705151403114_hehjdf.Designer.cs">
       <DependentUpon>201705151403114_hehjdf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705151811447_sdfdsf.cs" />
+    <Compile Include="Migrations\201705151811447_sdfdsf.Designer.cs">
+      <DependentUpon>201705151811447_sdfdsf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705151845556_tabortlocation.cs" />
+    <Compile Include="Migrations\201705151845556_tabortlocation.Designer.cs">
+      <DependentUpon>201705151845556_tabortlocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\DbModel.cs" />
@@ -240,6 +248,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\javascript-googlemaps.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -341,6 +350,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705151403114_hehjdf.resx">
       <DependentUpon>201705151403114_hehjdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151811447_sdfdsf.resx">
+      <DependentUpon>201705151811447_sdfdsf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151845556_tabortlocation.resx">
+      <DependentUpon>201705151845556_tabortlocation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
