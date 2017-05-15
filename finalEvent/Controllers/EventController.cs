@@ -48,15 +48,15 @@ namespace finalEvent.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-          public List<Event> GetEvents()
+        public List<Event> GetEvents()
         {
             try
             {
                 using (var context = new DbModel())
                 {
                     var myUser = User.Identity.Name;
-                    {   
-                        return context.Events.Where(e => e.Owner == myUser).OrderBy(e => e.StartDate).ToList(); 
+                    {
+                        return context.Events.Where(e => e.Owner == myUser).OrderBy(e => e.StartDate).ToList();
                     }
                 }
             }
@@ -64,7 +64,7 @@ namespace finalEvent.Controllers
             {
                 return null;
             }
-        }       
+        }
         public ActionResult MyEvents()
         {
             var myEvents = GetEvents();
@@ -72,8 +72,8 @@ namespace finalEvent.Controllers
 
         }
 
-<<<<<<< Updated upstream
-        public List <EventAttendee> GetAttendees(int id)
+
+        public List<EventAttendee> GetAttendees(int id)
         {
             try
             {
@@ -95,41 +95,28 @@ namespace finalEvent.Controllers
             var att = GetAttendees(id);
             return View(att);
         }
-        //public ActionResult Attendee(int id)
-        //{
-        //    try
-        //    {
-        //        using (var context = new DbModel())
-        //        {
-        //            var myEvent = id;
-        //            {
-        //                return context.EventAttendees.f
-        //            }
-        //        }
-        //    }
-        //}
-=======
+
         public ActionResult Delete(int id)
         {
             try
             {
-                using (var context  = new DbModel())
+                using (var context = new DbModel())
                 {
-                    
+
                     var deleteEvent = context.Events.First(e => e.EventId == id);
-                   
-                    
-                        context.Events.Remove(deleteEvent);
+
+
+                    context.Events.Remove(deleteEvent);
                     context.SaveChanges();
                 }
                 return RedirectToAction("MyEvents", "Event");
-                
+
             }
             catch
             {
                 return RedirectToAction("Error", "Shared");
             }
+
         }
->>>>>>> Stashed changes
     }
 }
