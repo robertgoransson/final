@@ -49,7 +49,7 @@
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            @Html.EditorFor(u => u.StartDate, new { htmlAttributes = new {placeholder = "Startdatum", @class = "form-control" } })
+                            @Html.EditorFor(u => u.StartDate, new { htmlAttributes = new {placeholder = Html.DisplayNameFor(n => n.StartDate), @class = "form-control" } })
                             @Html.ValidationMessageFor(u => u.StartDate, "", new { @class = "text-danger" })
                         </div>
                     </div>

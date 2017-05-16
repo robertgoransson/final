@@ -15,18 +15,21 @@ namespace finalEvent.Models
         [Key]
         public int EventId { get; set; }
         [Required(ErrorMessage ="Eventet måste ha ett namn.")]
-        
+       
         public string EventName { get; set; }
-
+       [Required(ErrorMessage ="Eventet måste ha ett startdatum.")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public string  StartDate  { get; set; }
+        [Required(ErrorMessage = "Eventet måste ha ett slutdatum.")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public string EndingDate { get; set; }
+        [Required(ErrorMessage = "Eventet måste ha en starttid.")]
         [DataType(DataType.Time)]
         [DisplayFormat(DataFormatString = "{0:hh/mm}", ApplyFormatInEditMode = true)]
         public string StartHour { get; set;  }
+        [Required(ErrorMessage = "Eventet måste ha en sluttid.")]
         [DataType(DataType.Time)]
         [DisplayFormat(DataFormatString = "{0:hh/mm}", ApplyFormatInEditMode = true)]
         public DateTime EndHour { get; set; }

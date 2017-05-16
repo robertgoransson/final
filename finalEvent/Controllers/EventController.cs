@@ -70,6 +70,7 @@ namespace finalEvent.Controllers
                 return null;
             }
         }
+      
         public ActionResult MyEvents()
         {
             var myEvents = GetEvents();
@@ -122,6 +123,34 @@ namespace finalEvent.Controllers
                 return RedirectToAction("Error", "Shared");
             }
 
+        }
+
+        public ActionResult ShowEvent(int id)
+        {
+            try {
+                using (var context = new DbModel())
+                {
+                    var events = context.Events.Where(e => e.EventId == id).FirstOrDefault();
+
+                    var eventinfo = new Event
+                    {
+                        EventName = events.EventName,
+                        Description = events.Description,
+                        StartDate = events.StartDate,
+                        EndingDate = events.EndingDate,
+                        StartHour = events.StartHour,
+                        EndHour = events.EndHour,
+                        Owner = events.Owner,
+                        Address = events.Address
+                    };
+                    return View(eventinfo);
+                }
+
+            }
+            catch
+            {
+                return RedirectToAction("MyEvents", "Events");
+            }
         }
     }
 }

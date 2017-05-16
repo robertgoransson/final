@@ -231,6 +231,10 @@
     <Compile Include="Migrations\201705161228590_tabortaccepted.Designer.cs">
       <DependentUpon>201705161228590_tabortaccepted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705161355235_tjenis.cs" />
+    <Compile Include="Migrations\201705161355235_tjenis.Designer.cs">
+      <DependentUpon>201705161355235_tjenis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactList.cs" />
@@ -298,6 +302,7 @@
     <Content Include="Views\Event\AddContactToEvent.cshtml" />
     <Content Include="Views\Attendee\AddConttactToEvent.cshtml" />
     <Content Include="Views\Contact\MyContacts.cshtml" />
+    <Content Include="Views\Event\ShowEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -369,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705161228590_tabortaccepted.resx">
       <DependentUpon>201705161228590_tabortaccepted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161355235_tjenis.resx">
+      <DependentUpon>201705161355235_tjenis.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
