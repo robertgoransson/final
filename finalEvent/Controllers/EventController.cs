@@ -17,8 +17,13 @@ namespace finalEvent.Controllers
         {
             return View();
         }
-        [HttpPost]
+ 
 
+        public ActionResult Created()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult CreateEvent(Event newEvent)
         {
             using (var context = new DbModel())
@@ -41,7 +46,7 @@ namespace finalEvent.Controllers
                     };
                     context.Events.Add(events);
                     context.SaveChanges();
-                    return RedirectToAction("Sent", "Home");
+                    return RedirectToAction("MyEvents", "Event");
                 }
             }
 

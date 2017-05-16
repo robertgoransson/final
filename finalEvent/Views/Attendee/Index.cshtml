@@ -1,0 +1,19 @@
+﻿@model finalEvent.Models.ContactList
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deltagare</h2>
+
+
+
+
+<ul class="dropdown-menu">
+    @foreach (var e in Model.Contacts)
+    {
+        <li>@e.ReceiverEmail</li>
+    }
+    
+</ul>

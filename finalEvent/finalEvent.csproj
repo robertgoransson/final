@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ContactList.cs" />
     <Compile Include="Models\DbModel.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\EventAttendee.cs" />
@@ -237,6 +238,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\emoji.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -247,9 +249,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\config.js" />
+    <Content Include="Scripts\emoji-picker.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.emojiarea.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -257,6 +262,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\util.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -280,16 +286,16 @@
     <Content Include="Views\Home\Sent.cshtml" />
     <Content Include="Views\User\ShowInfo.cshtml" />
     <Content Include="Views\Event\CreateEvent.cshtml" />
-    <Content Include="Views\Home\Created.cshtml" />
+    <Content Include="Views\Event\Created.cshtml" />
     <Content Include="Views\Event\MyEvents.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Event\Attendee.cshtml" />
+    <Content Include="Views\Event\AddContactToEvent.cshtml" />
+    <Content Include="Views\Attendee\AddConttactToEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\Attendee\" />
-    <Folder Include="Views\Created\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

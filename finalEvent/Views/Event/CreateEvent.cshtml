@@ -42,6 +42,13 @@
 
                     <div class="form-group">
                         <div class="col-md-10">
+                            @Html.Editor(u => u.Description, new { htmlAttributes = new { placeholder = "Beskrivning av evenemang", @class = "form-control" } })
+                            @Html.ValidationMessageFor(u => u.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10">
                             @Html.EditorFor(u => u.StartDate, new { htmlAttributes = new {placeholder = "Startdatum", @class = "form-control" } })
                             @Html.ValidationMessageFor(u => u.StartDate, "", new { @class = "text-danger" })
                         </div>
