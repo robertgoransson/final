@@ -18,7 +18,7 @@ namespace finalEvent.Models
        
         public string ReceiverEmail { get; set; }
         
-        public bool Accepted { get; set; }
+      
         public virtual User Sender { get; set; }
         public virtual User Receiver { get; set; }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using finalEvent.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,10 @@ namespace finalEvent.Controllers
         // GET: Attendee
         public ActionResult Index()
         {
+           
+            
+            
+
             return View();
         }
 
@@ -18,5 +23,13 @@ namespace finalEvent.Controllers
         {
             return View();
         }
+        public ActionResult AddConttactToEvent()
+        {
+            return View();
+        }
+
+       
+            
+        }
+       
     }
-}

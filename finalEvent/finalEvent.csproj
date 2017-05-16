@@ -162,6 +162,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FriendHelper.cs" />
     <Compile Include="Migrations\201704271024404_hej.cs" />
     <Compile Include="Migrations\201704271024404_hej.Designer.cs">
       <DependentUpon>201704271024404_hej.cs</DependentUpon>
@@ -226,6 +227,10 @@
     <Compile Include="Migrations\201705151845556_tabortlocation.Designer.cs">
       <DependentUpon>201705151845556_tabortlocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705161228590_tabortaccepted.cs" />
+    <Compile Include="Migrations\201705161228590_tabortaccepted.Designer.cs">
+      <DependentUpon>201705161228590_tabortaccepted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactList.cs" />
@@ -289,7 +294,7 @@
     <Content Include="Views\Event\Created.cshtml" />
     <Content Include="Views\Event\MyEvents.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
-    <Content Include="Views\Event\Attendee.cshtml" />
+    <Content Include="Views\Attendee\Index.cshtml" />
     <Content Include="Views\Event\AddContactToEvent.cshtml" />
     <Content Include="Views\Attendee\AddConttactToEvent.cshtml" />
   </ItemGroup>
@@ -360,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705151845556_tabortlocation.resx">
       <DependentUpon>201705151845556_tabortlocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705161228590_tabortaccepted.resx">
+      <DependentUpon>201705161228590_tabortaccepted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
