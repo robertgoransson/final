@@ -9,6 +9,7 @@ namespace finalEvent.Controllers
 {
     public class ContactController : Controller
     {
+        
         // GET: Friend
         public ActionResult Contact()
         {
@@ -37,33 +38,28 @@ namespace finalEvent.Controllers
         [HttpPost]
         public ActionResult AddContact(Contact newContact)
         {
-            try
-            {
                 using (var context = new DbModel())
                 {
                     {
-
-
-                        var friend = new Contact
+                        var myUser = User.Identity.Name;
+                        if (!context.Contacts.Any(c => c.SenderEmail == myUser && newContact.ReceiverEmail == c.ReceiverEmail))
                         {
-                            ReceiverEmail = newContact.ReceiverEmail,
-                            SenderEmail = User.Identity.Name,
-                        };
-
-
-                        context.Contacts.Add(friend);
-                        context.SaveChanges();
-
-                        return RedirectToAction("About", "Home");
-
+                            var friend = new Contact
+                            {
+                                ReceiverEmail = newContact.ReceiverEmail,
+                                SenderEmail = myUser,
+                            };
+                            context.Contacts.Add(friend);
+                            context.SaveChanges();
+                            return RedirectToAction("MyContacts", "Contact");
+                        }
+                        else
+                        {
+                            return RedirectToAction("AddContact", "Contact");
+                        }
                     }
-                }
+                }   
             }
-            catch 
-            {
-                return null;
-            }
-        }
 
         public List<Contact> GetContacts()
         {
@@ -86,6 +82,23 @@ namespace finalEvent.Controllers
         {
             var myContacts = GetContacts();
             return View(myContacts);
+        }
+        public ActionResult DeleteContact(int id)
+        {
+            try
+            {
+                using(var context=new DbModel())
+                {
+                    var deleteContact = context.Contacts.FirstOrDefault(c => c.ContactId == id);
+                    context.Contacts.Remove(deleteContact);
+                    context.SaveChanges();
+                }
+                return RedirectToAction("MyContacts", "Contact");
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Shared");
+            }
         }
         
     }

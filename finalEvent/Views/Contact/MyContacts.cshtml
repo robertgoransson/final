@@ -7,9 +7,6 @@
 
 <h2>View</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
     </tr>
@@ -20,7 +17,7 @@
             @Html.DisplayFor(modelItem => item.ReceiverEmail)
         </td>
         <td>
-            @Html.ActionLink("Delete", "Delete", new { id=item.ContactId })
+            @Html.ActionLink("Ta bort kontakt", "DeleteContact", new { id=item.ContactId })
         </td>
     </tr>
 }
