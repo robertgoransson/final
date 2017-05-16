@@ -48,17 +48,10 @@ namespace finalEvent.Controllers
                         {
                             ReceiverEmail = newContact.ReceiverEmail,
                             SenderEmail = User.Identity.Name,
-                            Accepted = false
-                        };
-                        var friend2 = new Contact
-                        {
-                            ReceiverEmail = User.Identity.Name,
-                            SenderEmail = newContact.SenderEmail,
-                            Accepted = false
                         };
 
+
                         context.Contacts.Add(friend);
-                        context.Contacts.Add(friend2);
                         context.SaveChanges();
 
                         return RedirectToAction("About", "Home");
@@ -72,24 +65,7 @@ namespace finalEvent.Controllers
             }
         }
 
-        public List <Contact> FriendRequest(string email)
-        {
-                using(var context = new DbModel())
-                {
-                var friendRequest = context.Contacts.Where(f => f.SenderEmail == email && f.Accepted == false).Select(f => f.SenderEmail).ToList();
-                return context.Contacts.Where(u => friendRequest.Any(f => f==u.ReceiverEmail)).ToList();
-                }
-        }
-
-        public void Accepted(string email)
-        {
-            using (var context = new DbModel())
-            {
-                context.Contacts.FirstOrDefault(f => f.ReceiverEmail == User.Identity.Name && f.SenderEmail == email).Accepted = true;
-                context.SaveChanges();
-            }
-        }
-        public List<Contact> GetFriends()
+        public List<Contact> GetContacts()
         {
             try
             {
@@ -97,7 +73,7 @@ namespace finalEvent.Controllers
                 {
                     var myUser = User.Identity.Name;
                     {
-                        return context.Contacts.Where(f => f.SenderEmail == myUser && f.Accepted == true).ToList();                       
+                        return context.Contacts.Where(f => f.SenderEmail == myUser).ToList();                       
                     };
                 }
             }
@@ -108,7 +84,7 @@ namespace finalEvent.Controllers
         }
         public ActionResult ShowContacts()
         {
-            var myContacts = GetFriends();
+            var myContacts = GetContacts();
             return View(myContacts);
         }
         
