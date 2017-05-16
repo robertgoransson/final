@@ -42,7 +42,7 @@
 
                     <div class="form-group">
                         <div class="col-md-10">
-                            @Html.Editor(u => u.Description, new { htmlAttributes = new { placeholder = "Beskrivning av evenemang", @class = "form-control" } })
+                            @Html.EditorFor(u => u.Description, new { htmlAttributes = new { placeholder = "Beskrivning av evenemang", @class = "form-control" } })
                             @Html.ValidationMessageFor(u => u.Description, "", new { @class = "text-danger" })
                         </div>
                     </div>
