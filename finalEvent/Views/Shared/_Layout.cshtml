@@ -33,11 +33,36 @@
                         } }
                     @{ if (Request.IsAuthenticated)
                         {
-                   <li> @Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
-                   <li>@Html.ActionLink("Lägg till vänner", "Contact","Contact")</li>
-                    <li>@Html.ActionLink("Bjud in", "SendEmail", "Email")</li>
-                    <li>@Html.ActionLink("Skapa Event", "CreateEvent", "Event")</li>
-                    <li>@Html.ActionLink("Mina Event", "MyEvents", "Event")</li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Min sida
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li> @Html.ActionLink("Min sida", "MyPage", "MyPage")</li>
+                                    <li>@Html.ActionLink("Ändra dina uppgifter", "EditUser", "MyPage")</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Kontakter
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Lägg till vänner", "Contact", "Contact")</li>
+                                    <li>@Html.ActionLink("Bjud in", "SendEmail", "Email")</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Evenemang
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Skapa Evenemang", "CreateEvent", "Event")</li>
+                                    <li>@Html.ActionLink("Mina Evenemang", "MyEvents", "Event")</li>
+                                </ul>
+                            </li>
                         } }  
                     <li>
     @using (Html.BeginForm("showInfo", "User", FormMethod.Post))

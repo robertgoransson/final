@@ -162,7 +162,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\FriendHelper.cs" />
     <Compile Include="Migrations\201704271024404_hej.cs" />
     <Compile Include="Migrations\201704271024404_hej.Designer.cs">
       <DependentUpon>201704271024404_hej.cs</DependentUpon>

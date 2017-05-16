@@ -4,13 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using finalEvent.Models;
-using finalEvent.Helpers;
 
 namespace finalEvent.Controllers
 {
     public class ContactController : Controller
     {
-        FriendHelper _friendHelper = new FriendHelper();
         // GET: Friend
         public ActionResult Contact()
         {
@@ -49,10 +47,18 @@ namespace finalEvent.Controllers
                         var friend = new Contact
                         {
                             ReceiverEmail = newContact.ReceiverEmail,
-                            SenderEmail = User.Identity.Name                            
+                            SenderEmail = User.Identity.Name,
+                            Accepted = false
+                        };
+                        var friend2 = new Contact
+                        {
+                            ReceiverEmail = User.Identity.Name,
+                            SenderEmail = newContact.SenderEmail,
+                            Accepted = false
                         };
 
                         context.Contacts.Add(friend);
+                        context.Contacts.Add(friend2);
                         context.SaveChanges();
 
                         return RedirectToAction("About", "Home");
@@ -65,5 +71,46 @@ namespace finalEvent.Controllers
                 return null;
             }
         }
+
+        public List <Contact> FriendRequest(string email)
+        {
+                using(var context = new DbModel())
+                {
+                var friendRequest = context.Contacts.Where(f => f.SenderEmail == email && f.Accepted == false).Select(f => f.SenderEmail).ToList();
+                return context.Contacts.Where(u => friendRequest.Any(f => f==u.ReceiverEmail)).ToList();
+                }
+        }
+
+        public void Accepted(string email)
+        {
+            using (var context = new DbModel())
+            {
+                context.Contacts.FirstOrDefault(f => f.ReceiverEmail == User.Identity.Name && f.SenderEmail == email).Accepted = true;
+                context.SaveChanges();
+            }
+        }
+        public List<Contact> GetFriends()
+        {
+            try
+            {
+                using(var context = new DbModel())
+                {
+                    var myUser = User.Identity.Name;
+                    {
+                        return context.Contacts.Where(f => f.SenderEmail == myUser && f.Accepted == true).ToList();                       
+                    };
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public ActionResult ShowContacts()
+        {
+            var myContacts = GetFriends();
+            return View(myContacts);
+        }
+        
     }
 }
