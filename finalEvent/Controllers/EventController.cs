@@ -127,10 +127,11 @@ namespace finalEvent.Controllers
 
         public ActionResult ShowEvent(int id)
         {
+            var eventID = id;
             try {
                 using (var context = new DbModel())
                 {
-                    var events = context.Events.Where(e => e.EventId == id).FirstOrDefault();
+                    var events = context.Events.Where(e => e.EventId == eventID).FirstOrDefault();
 
                     var eventinfo = new Event
                     {

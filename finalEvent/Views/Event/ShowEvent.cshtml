@@ -1,25 +1,16 @@
 ﻿@model finalEvent.Models.Event
 
-@{
-    ViewBag.Title = "ShowEvent";
-}
 
-<h2>ShowEvent</h2>
+<h2>@Model.EventName</h2>
 
 <div>
-    <h4>Event</h4>
+   
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Email.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email.Password)
-        </dd>
+       
 
         <dt>
-            @Html.DisplayNameFor(model => model.EventName)
+            @Html.LabelFor(model => model.EventName, "Namn på evenemang:")
         </dt>
 
         <dd>
@@ -27,7 +18,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
+            @Html.LabelFor(model => model.StartDate, "Startdatum:")
         </dt>
 
         <dd>
@@ -35,7 +26,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EndingDate)
+            @Html.LabelFor(model => model.EndingDate,"Slutdatum:")
         </dt>
 
         <dd>
@@ -43,7 +34,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.StartHour)
+            @Html.LabelFor(model => model.StartHour,"Startid:")
         </dt>
 
         <dd>
@@ -51,7 +42,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EndHour)
+            @Html.LabelFor(model => model.EndHour, "Sluttid:")
         </dt>
 
         <dd>
@@ -59,7 +50,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.LabelFor(model => model.Description,"Beskrivning av event:")
         </dt>
 
         <dd>
@@ -67,7 +58,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.LabelFor(model => model.Address,"Address evenemang:")
         </dt>
 
         <dd>
@@ -76,7 +67,4 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
