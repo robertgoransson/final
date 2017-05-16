@@ -303,6 +303,7 @@
     <Content Include="Views\Attendee\AddConttactToEvent.cshtml" />
     <Content Include="Views\Contact\MyContacts.cshtml" />
     <Content Include="Views\Event\ShowEvent.cshtml" />
+    <Content Include="Views\Event\Attendee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

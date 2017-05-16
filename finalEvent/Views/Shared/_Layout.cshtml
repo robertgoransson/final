@@ -62,19 +62,20 @@
                                 <ul class="dropdown-menu">
                                     <li>@Html.ActionLink("Skapa Evenemang", "CreateEvent", "Event")</li>
                                     <li>@Html.ActionLink("Mina Evenemang", "MyEvents", "Event")</li>
+                                    <li>@Html.ActionLink("Gå med i ett event","#","#")</li>
                                 </ul>
                             </li>
-                        } }  
+                        }
+                        }  
                     <li>
     @using (Html.BeginForm("showInfo", "User", FormMethod.Post))
     {
         if (Request.IsAuthenticated)
         {
             <input type="text" name="Epost" placeholder="Sök">
-
         }
-    }
-                        </li>                
+    }          
+                   </li>                
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @{ if (Request.IsAuthenticated)

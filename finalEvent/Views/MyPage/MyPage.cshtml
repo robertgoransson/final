@@ -11,6 +11,12 @@
 <div><img src="~/images/@Model.Picture" width="150" height="150" />   </div>
 
 
-
+@using (Html.BeginForm("EditPicture", "MyPage", FormMethod.Post,
+                                        new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Ladda upp bild:</label>
+    <input type="file" name="file" id="file" style="width: 100%;" />
+    <input type="submit" value="Upload" class="submit" />
+}
 
 

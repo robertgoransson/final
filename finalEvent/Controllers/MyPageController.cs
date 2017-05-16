@@ -96,9 +96,26 @@ namespace finalEvent.Controllers
             }
         }
 
+        public void ProfilePicture(string file)
+        {
+            try
+            {
+                using (var db = new DbModel())
+                {
+                    var email = User.Identity.Name;
+                    User users = db.Users.FirstOrDefault(u => u.Email == email);
+                    users.Picture = file;
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                
+            }
+        }
         [Authorize]
         [HttpPost]
-        public ActionResult EditPicture(User user, HttpPostedFileBase file)
+        public ActionResult EditPicture( HttpPostedFileBase file)
         {
             try
             {
@@ -106,16 +123,24 @@ namespace finalEvent.Controllers
                 {
                     var Email = User.Identity.Name;
                     User myUser = context.Users.FirstOrDefault(u => u.Email == Email);
-                    if (user != null)
+                    if (file != null)
                     {
-                        myUser.Picture = Path.GetFileName(file.FileName);
+                        string picture = System.IO.Path.GetFileName(file.FileName);
+                        string path = System.IO.Path.Combine(Server.MapPath("~/images/profile"), picture);
+                        file.SaveAs(path);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            file.InputStream.CopyTo(ms);
+                            byte[] array = ms.GetBuffer();
+                        }
+                        context.SaveChanges();
+                        return RedirectToAction("MyPage", "MyPage");
                     }
                     else
                     {
                         return null;
                     }
-                    context.SaveChanges();
-                    return RedirectToAction("MyPage", "MyPage");
+                    
                 }
             }
             catch
