@@ -297,6 +297,7 @@
     <Content Include="Views\Attendee\Index.cshtml" />
     <Content Include="Views\Event\AddContactToEvent.cshtml" />
     <Content Include="Views\Attendee\AddConttactToEvent.cshtml" />
+    <Content Include="Views\Contact\MyContacts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -82,7 +82,7 @@ namespace finalEvent.Controllers
                 return null;
             }
         }
-        public ActionResult ShowContacts()
+        public ActionResult MyContacts()
         {
             var myContacts = GetContacts();
             return View(myContacts);
