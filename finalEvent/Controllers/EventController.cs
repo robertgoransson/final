@@ -133,7 +133,7 @@ namespace finalEvent.Controllers
                 {
                     var events = context.Events.Where(e => e.EventId == eventID).FirstOrDefault();
 
-                    var eventinfo = new Event
+                    var eventinfo = new EventInfo
                     {
                         EventName = events.EventName,
                         Description = events.Description,
