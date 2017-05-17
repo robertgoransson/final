@@ -159,12 +159,6 @@ namespace finalEvent.Controllers
                 return RedirectToAction("MyEvents", "Events");
             }
         }
-        [HttpGet]
-        public ActionResult MyContactss()
-        {
-            ContactController _Cc = new ContactController();
-            var myContacts = _Cc.GetContacts();
-            return View(myContacts);
-        }
+       
     }
 }

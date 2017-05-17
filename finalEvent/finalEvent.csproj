@@ -243,6 +243,10 @@
     <Compile Include="Migrations\201705170853289_hej3.Designer.cs">
       <DependentUpon>201705170853289_hej3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705170909077_contact1.cs" />
+    <Compile Include="Migrations\201705170909077_contact1.Designer.cs">
+      <DependentUpon>201705170909077_contact1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactList.cs" />
@@ -393,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705170853289_hej3.resx">
       <DependentUpon>201705170853289_hej3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705170909077_contact1.resx">
+      <DependentUpon>201705170909077_contact1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
