@@ -116,26 +116,30 @@ namespace finalEvent.Controllers
         [HttpPost]
         public ActionResult EditPicture( HttpPostedFileBase file)
         {
-                    if (file != null)
+            try
+            {
+                if (file != null)
+                {
+                    string picture = Path.GetFileName(file.FileName);
+                    string path = Path.Combine(Server.MapPath("~/images/profile"), picture);
+                    file.SaveAs(path);
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        string picture = Path.GetFileName(file.FileName);
-                        string path = Path.Combine(Server.MapPath("~/images/profile"), picture);
-
-                        file.SaveAs(path);
-
-                        using (MemoryStream ms = new MemoryStream())
-                        {
-                            file.InputStream.CopyTo(ms);
-                            byte[] array = ms.GetBuffer();
-                        }
-                        ProfilePicture(picture);
-                        return RedirectToAction("MyPage", "MyPage");
+                        file.InputStream.CopyTo(ms);
+                        byte[] array = ms.GetBuffer();
                     }
-                    else
-                    {
-                        return null;
-                    }
-
+                    ProfilePicture(picture);
+                    return RedirectToAction("MyPage", "MyPage");
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                return RedirectToAction("MyPage", "Mypage");
+            }
         }
     }
 }
