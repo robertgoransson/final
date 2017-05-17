@@ -11,8 +11,7 @@ namespace finalEvent.Models
     public class EventInfo : Event
     {
 
-        public Contact Contact { get; set; }
-        public IEnumerable<SelectListItem> MyContacts { get; set; }
-       
+      public EventAttendee EventAttendees { get; set; }
+       public Contact Contacts { get; set; }
     }
 }

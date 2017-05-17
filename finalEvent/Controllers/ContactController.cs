@@ -66,9 +66,12 @@ namespace finalEvent.Controllers
         }
         public ActionResult MyContacts()
         {
+            
             var myContacts = GetContacts();
             return View(myContacts);
         }
+
+      
         public ActionResult DeleteContact(int id)
         {
             try

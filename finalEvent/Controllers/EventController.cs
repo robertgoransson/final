@@ -17,7 +17,7 @@ namespace finalEvent.Controllers
         {
             return View();
         }
- 
+
 
         public ActionResult Created()
         {
@@ -70,7 +70,7 @@ namespace finalEvent.Controllers
                 return null;
             }
         }
-      
+
         public ActionResult MyEvents()
         {
             var myEvents = GetEvents();
@@ -124,19 +124,21 @@ namespace finalEvent.Controllers
             }
 
         }
-
+     
+        
         public ActionResult ShowEvent(int id)
         {
            
             var eventID = id;
-            try {
+            try
+            {
                 using (var context = new DbModel())
                 {
                     var events = context.Events.Where(e => e.EventId == eventID).FirstOrDefault();
-                    
-                    
-                      
-                    
+
+
+
+
                     var eventinfo = new EventInfo
                     {
                         EventName = events.EventName,
@@ -146,9 +148,10 @@ namespace finalEvent.Controllers
                         StartHour = events.StartHour,
                         EndHour = events.EndHour,
                         Owner = events.Owner,
-                        Address = events.Address
-                       
+                        Address = events.Address,
                         
+                        
+
                     };
                     return View(eventinfo);
                 }
@@ -159,15 +162,37 @@ namespace finalEvent.Controllers
                 return RedirectToAction("MyEvents", "Events");
             }
         }
-       //public ActionResult GetAllContacts()
-            
-       // {
-       //     DbModel db = new DbModel();
-       //     var model = new EventInfo();
-       //   model.MyContacts = new SelectList(db.my)
-       //     {
 
-       //     }
-       // }
+        [HttpPost]
+        public ActionResult AddContactToEvent(EventAttendee anttendee)
+        {
+
+            
+
+            using (var context = new DbModel())
+            {
+                
+                
+
+                var add = new EventAttendee
+                {
+                    IdEvent = 19,
+                   
+                    Attendes = anttendee.Attendes
+                };
+                context.EventAttendees.Add(add);
+                context.SaveChanges();
+                return RedirectToAction("ShowEvent", "Event");
+             
+                  
+                
+            }
+           
+                
+            }
+            //ContactController _con = new ContactController();
+            //var add = _con.MyContacts();
+
+
+        }
     }
-}

@@ -255,6 +255,14 @@
     <Compile Include="Migrations\201705171104552_hehejej.Designer.cs">
       <DependentUpon>201705171104552_hehejej.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705171131579_sdfffsdfsdf.cs" />
+    <Compile Include="Migrations\201705171131579_sdfffsdfsdf.Designer.cs">
+      <DependentUpon>201705171131579_sdfffsdfsdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705171354238_sdfsdfdsdfsfdsdfsdfsdfsdfsfsddfsfds.cs" />
+    <Compile Include="Migrations\201705171354238_sdfsdfdsdfsfdsdfsdfsdfsdfsfsddfsfds.Designer.cs">
+      <DependentUpon>201705171354238_sdfsdfdsdfsfdsdfsdfsdfsdfsfsddfsfds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactList.cs" />
@@ -414,6 +422,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705171104552_hehejej.resx">
       <DependentUpon>201705171104552_hehejej.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705171131579_sdfffsdfsdf.resx">
+      <DependentUpon>201705171131579_sdfffsdfsdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705171354238_sdfsdfdsdfsfdsdfsdfsdfsdfsfsddfsfds.resx">
+      <DependentUpon>201705171354238_sdfsdfdsdfsfdsdfsdfsdfsdfsfsddfsfds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
