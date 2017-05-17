@@ -20,20 +20,6 @@ namespace finalEvent.Controllers
             return View();
         }
 
-        //public User GetUser(string Email)
-        //{
-        //    try
-        //    {
-        //        using (var context = new DbModel())
-        //        {
-        //            return context.Users.FirstOrDefault(u => u.Email == Email);
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //}
 
         [HttpPost]
         public ActionResult AddContact(Contact newContact)
@@ -100,10 +86,5 @@ namespace finalEvent.Controllers
                 return RedirectToAction("Error", "Shared");
             }
         }
-
-      
-
-
-
     }
 }
