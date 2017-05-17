@@ -11,6 +11,7 @@ namespace finalEvent.Models
     {
       
 
-        public List<Contact> MyContacts { get; set; }
+        public IEnumerable<Contact> MyContacts { get; set; }
+        
     }
 }

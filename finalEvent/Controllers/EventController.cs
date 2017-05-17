@@ -127,12 +127,16 @@ namespace finalEvent.Controllers
 
         public ActionResult ShowEvent(int id)
         {
+           
             var eventID = id;
             try {
                 using (var context = new DbModel())
                 {
                     var events = context.Events.Where(e => e.EventId == eventID).FirstOrDefault();
-
+                    
+                    
+                      
+                    
                     var eventinfo = new EventInfo
                     {
                         EventName = events.EventName,
@@ -143,6 +147,8 @@ namespace finalEvent.Controllers
                         EndHour = events.EndHour,
                         Owner = events.Owner,
                         Address = events.Address
+                       
+                        
                     };
                     return View(eventinfo);
                 }
@@ -152,6 +158,13 @@ namespace finalEvent.Controllers
             {
                 return RedirectToAction("MyEvents", "Events");
             }
+        }
+        [HttpGet]
+        public ActionResult MyContactss()
+        {
+            ContactController _Cc = new ContactController();
+            var myContacts = _Cc.GetContacts();
+            return View(myContacts);
         }
     }
 }
