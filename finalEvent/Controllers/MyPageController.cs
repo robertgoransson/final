@@ -100,17 +100,16 @@ namespace finalEvent.Controllers
         {
             try
             {
-                using (var db = new DbModel())
+                using (var context = new DbModel())
                 {
                     var email = User.Identity.Name;
-                    User users = db.Users.FirstOrDefault(u => u.Email == email);
+                    User users = context.Users.FirstOrDefault(u => u.Email == email);
                     users.Picture = file;
-                    db.SaveChanges();
+                    context.SaveChanges();
                 }
             }
             catch
-            {
-                
+            {     
             }
         }
         [Authorize]
@@ -119,33 +118,27 @@ namespace finalEvent.Controllers
         {
             try
             {
-                using (var context = new DbModel())
+                if (file != null)
                 {
-                    var Email = User.Identity.Name;
-                    User myUser = context.Users.FirstOrDefault(u => u.Email == Email);
-                    if (file != null)
+                    string picture = Path.GetFileName(file.FileName);
+                    string path = Path.Combine(Server.MapPath("~/images/profile"), picture);
+                    file.SaveAs(path);
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        string picture = System.IO.Path.GetFileName(file.FileName);
-                        string path = System.IO.Path.Combine(Server.MapPath("~/images/profile"), picture);
-                        file.SaveAs(path);
-                        using (MemoryStream ms = new MemoryStream())
-                        {
-                            file.InputStream.CopyTo(ms);
-                            byte[] array = ms.GetBuffer();
-                        }
-                        context.SaveChanges();
-                        return RedirectToAction("MyPage", "MyPage");
+                        file.InputStream.CopyTo(ms);
+                        byte[] array = ms.GetBuffer();
                     }
-                    else
-                    {
-                        return null;
-                    }
-                    
+                    ProfilePicture(picture);
+                    return RedirectToAction("MyPage", "MyPage");
+                }
+                else
+                {
+                    return null;
                 }
             }
             catch
             {
-                return RedirectToAction("MyPage", "MyPage");
+                return RedirectToAction("MyPage", "Mypage");
             }
         }
     }

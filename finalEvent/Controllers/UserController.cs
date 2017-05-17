@@ -29,13 +29,10 @@ namespace finalEvent.Controllers
         }
 
         [HttpPost]
-        
-
         public ActionResult Login(string Email, string password)
         {
             using (var context = new DbModel())
             {
-
                 var user = context.Users.FirstOrDefault(u => u.Email.Equals(Email) && u.Password.Equals(password));
 
                 if (user != null && ModelState.IsValid)
@@ -45,12 +42,10 @@ namespace finalEvent.Controllers
                     Response.Cookies.Add(cookie);
                     FormsAuthentication.SetAuthCookie(Email, true);
 
-
                     return RedirectToAction("About", "Home");
                 }
                 else
                 {
-
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -89,15 +84,12 @@ namespace finalEvent.Controllers
                 return RedirectToAction("About", "Home");
             }
         }
+
         [HttpPost]
         public ActionResult RegisterUser(User newUser, HttpPostedFileBase file)
         {
-            
-
             try
-            {
-            
-                
+            {      
                 using (var context = new DbModel())
                 {
                    
@@ -119,71 +111,15 @@ namespace finalEvent.Controllers
                         context.Users.Add(user);
                         context.SaveChanges();
                         
-                        return RedirectToAction("About","Home");
-                    }
-                    
-                    
-                }
-           
-
-                
+                        return RedirectToAction("Index","Home");
+                    }                    
+                }     
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine(e);
+                return RedirectToAction("RegisterUser", "User");
             }
-
-
-
-
             return View();
-        }
-        //public ActionResult FileUpload(HttpPostedFileBase file)
-        //{
-
-        //    if (file != null)
-        //    {
-        //       DbModel db = new DbModel();
-        //        string ImageName = System.IO.Path.GetFileName(file.FileName);
-        //        string physicalPath = Server.MapPath("~/Images/" + ImageName);
-
-        //        // save image in folder
-        //        file.SaveAs(physicalPath);
-
-        //        //save new record in database
-        //        var userPicture = new User();
-        //        userPicture.Picture = ImageName;
-        //        db.Users.Add(userPicture);
-        //        db.SaveChanges();
-
-        //    }
-        //    //Display records
-        //    return View();
-        //}
-
-
-        //public ActionResult UploadPicture(HttpPostedFileBase file)
-        //{
-        //    if (file != null)
-        //    {
-        //        string pic = Path.GetFileName(file.FileName);
-        //        string path =Path.Combine(
-        //                               Server.MapPath("~/images/profile"), pic);
-
-        //        file.SaveAs(path);
-
-
-        //        using (MemoryStream ms = new MemoryStream())
-        //        {
-        //            file.InputStream.CopyTo(ms);
-        //            byte[] array = ms.GetBuffer();
-        //        }
-
-        //    }
-
-        //    return View();
-        //}
-
-
+            }
     }
 }
