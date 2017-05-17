@@ -159,6 +159,26 @@ namespace finalEvent.Controllers
                 return RedirectToAction("MyEvents", "Events");
             }
         }
-       
+        public ActionResult MyContacts()
+        {
+            using (var context = new DbModel())
+            {
+
+                var myUser = User.Identity.Name;
+                {
+                    var myContacts = context.Contacts.Where(f => f.SenderEmail == myUser).ToList();
+
+
+                    var model = new List<Contact>();
+
+                    model.Add(new Contact {  ReceiverEmail = "ggggg"});
+
+
+
+
+                    return View(model);
+                };
+            }
+        }
     }
 }

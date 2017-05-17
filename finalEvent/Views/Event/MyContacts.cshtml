@@ -1,0 +1,75 @@
+﻿@model IEnumerable<finalEvent.Models.EventInfo>
+
+@{
+    ViewBag.Title = "MyContacts";
+}
+
+<h2>MyContacts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartHour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndHour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartHour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndHour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventId })
+        </td>
+    </tr>
+}
+
+</table>
