@@ -7,11 +7,16 @@ using System.Web;
 
 namespace finalEvent.Models
 {
-    public class EventInfo:Event
+    public class EventInfo : Event
     {
-      
 
-        public List<Contact> MyContacts { get; set; }
-        public Contact Contacts { get; set; }
+
+        public System.Web.Mvc.SelectList MyContacts { get; set; }
+        public Contact Contacts
+        {
+            get; set;
+
+
+        }
     }
 }

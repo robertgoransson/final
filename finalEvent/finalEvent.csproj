@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201705170945445_hsdd.Designer.cs">
       <DependentUpon>201705170945445_hsdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705171104552_hehejej.cs" />
+    <Compile Include="Migrations\201705171104552_hehejej.Designer.cs">
+      <DependentUpon>201705171104552_hehejej.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactList.cs" />
@@ -321,7 +325,6 @@
     <Content Include="Views\Contact\MyContacts.cshtml" />
     <Content Include="Views\Event\ShowEvent.cshtml" />
     <Content Include="Views\Event\Attendee.cshtml" />
-    <Content Include="Views\Event\MyContacts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -408,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705170945445_hsdd.resx">
       <DependentUpon>201705170945445_hsdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705171104552_hehejej.resx">
+      <DependentUpon>201705171104552_hehejej.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
