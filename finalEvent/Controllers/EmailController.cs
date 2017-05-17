@@ -18,26 +18,12 @@ namespace finalEvent.Controllers
         {
             _userController = new UserController();
         }
-       
-        
+             
         public ActionResult SendEmail() {
 
             return View();
         }
-        // GET: Email
 
-
-        //public ActionResult SendEmail(User user)
-        //{
-        //    WebMail.Send(user.Email
-        //        , user.Email + "Har bjudit in dig till att delta i ett evenemang"
-        //        , null
-        //        , null
-        //        , null
-
-        //        );
-        //    return RedirectToAction("Index", "Home");
-        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]

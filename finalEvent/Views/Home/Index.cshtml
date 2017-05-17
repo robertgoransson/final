@@ -6,7 +6,6 @@
     ViewBag.Title = "Home Page";
 }
 
-
 <div class="container-fluid bg-1 text-center">
     <div class="row">
         <div class="col-md-12">
@@ -38,22 +37,18 @@
                             
                         </div>
                     </div>
-
-                }
         }
     }
+    <div class="container-fluid bg-1 text-center">
+        <p>
+            @Html.ActionLink("Registrera ny användare", "RegisterUser", "User")
+        </p>
+    </div>
+}
             </section>
         </div>
-    </div>
-    
+    </div>    
 </div>
-    
-<div class="container-fluid bg-1 text-center">
-    <p>
-        @Html.ActionLink("Registrera ny användare", "RegisterUser", "User")
-    </p>
-    </div>
-
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
