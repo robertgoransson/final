@@ -111,13 +111,13 @@ namespace finalEvent.Controllers
                         context.Users.Add(user);
                         context.SaveChanges();
                         
-                        return RedirectToAction("About","Home");
+                        return RedirectToAction("Index","Home");
                     }                    
                 }     
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine(e);
+                return RedirectToAction("RegisterUser", "User");
             }
             return View();
             }
