@@ -100,53 +100,42 @@ namespace finalEvent.Controllers
         {
             try
             {
-                using (var db = new DbModel())
+                using (var context = new DbModel())
                 {
                     var email = User.Identity.Name;
-                    User users = db.Users.FirstOrDefault(u => u.Email == email);
+                    User users = context.Users.FirstOrDefault(u => u.Email == email);
                     users.Picture = file;
-                    db.SaveChanges();
+                    context.SaveChanges();
                 }
             }
             catch
-            {
-                
+            {     
             }
         }
         [Authorize]
         [HttpPost]
         public ActionResult EditPicture( HttpPostedFileBase file)
         {
-            try
-            {
-                using (var context = new DbModel())
-                {
-                    var Email = User.Identity.Name;
-                    User myUser = context.Users.FirstOrDefault(u => u.Email == Email);
                     if (file != null)
                     {
-                        string picture = System.IO.Path.GetFileName(file.FileName);
-                        string path = System.IO.Path.Combine(Server.MapPath("~/images/profile"), picture);
+                        string picture = Path.GetFileName(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/images/profile"), picture);
+
                         file.SaveAs(path);
+
                         using (MemoryStream ms = new MemoryStream())
                         {
                             file.InputStream.CopyTo(ms);
                             byte[] array = ms.GetBuffer();
                         }
-                        context.SaveChanges();
+                        ProfilePicture(picture);
                         return RedirectToAction("MyPage", "MyPage");
                     }
                     else
                     {
                         return null;
                     }
-                    
-                }
-            }
-            catch
-            {
-                return RedirectToAction("MyPage", "MyPage");
-            }
+
         }
     }
 }
