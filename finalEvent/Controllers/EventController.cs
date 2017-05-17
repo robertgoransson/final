@@ -166,12 +166,12 @@ namespace finalEvent.Controllers
 
                 var myUser = User.Identity.Name;
                 {
-                    var myContacts = context.Contacts.Where(f => f.SenderEmail == myUser).ToList();
+                    var myContacts = context.Contacts.Where(f => f.ReceiverEmail == myUser).ToString();
 
 
                     var model = new List<Contact>();
 
-                    model.Add(new Contact {  ReceiverEmail = "ggggg"});
+                    model.Add(new Contact {ReceiverEmail = myContacts });
 
 
 
