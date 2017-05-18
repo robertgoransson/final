@@ -121,13 +121,9 @@ namespace finalEvent.Controllers
                 if (file != null)
                 {
                     string picture = Path.GetFileName(file.FileName);
-                    string path = Path.Combine(Server.MapPath("~/images/profile"), picture);
+                    string path = Path.Combine(Server.MapPath("/images/profile"), picture);
                     file.SaveAs(path);
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        file.InputStream.CopyTo(ms);
-                        byte[] array = ms.GetBuffer();
-                    }
+                   
                     ProfilePicture(picture);
                     return RedirectToAction("MyPage", "MyPage");
                 }
@@ -138,7 +134,7 @@ namespace finalEvent.Controllers
             }
             catch
             {
-                return RedirectToAction("MyPage", "Mypage");
+                throw;
             }
         }
     }

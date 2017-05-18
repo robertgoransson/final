@@ -16,7 +16,7 @@ namespace finalEvent.Models
 
         [Required]
         [DataType("Password")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$", ErrorMessage ="Lösen ska vara minst fem tecken långt och ska innehålla Stor bokstav, liten bokstav och minst en siffra.")]
+        [RegularExpression(@"^(?=.*[a-zåäö])(?=.*[A-ZÅÄÖ])(?=.*\d)[a-zA-Z\d]{6,}$", ErrorMessage ="Lösen ska vara minst fem tecken långt och ska innehålla Stor bokstav, liten bokstav och minst en siffra.")]
         [StringLength(20, MinimumLength = 6)]
         
         public string Password { get; set; }
@@ -26,12 +26,12 @@ namespace finalEvent.Models
         public string ConfirmPassword { get; set; }
 
         [Required]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage ="Förnamn får endast innehålla bokstäver.")]
+        [RegularExpression(@"^[a-zåäöA-ZÅÄÖ]+$", ErrorMessage ="Förnamn får endast innehålla bokstäver.")]
         [StringLength(20)]
         public string Firstname { get; set; }
 
         [Required]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Efternamn får endast innehålla bokstäver.")]
+        [RegularExpression(@"^[a-zåäöA-ZÅÄÖ]+$", ErrorMessage = "Efternamn får endast innehålla bokstäver.")]
         [StringLength(25)]
         public string Lastname { get; set; }
 
