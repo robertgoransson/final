@@ -171,7 +171,7 @@ namespace finalEvent.Controllers
 
             using (var context = new DbModel())
             {
-                
+               
                 
 
                 var add = new EventAttendee

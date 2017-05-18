@@ -328,7 +328,6 @@
     <Content Include="Views\Event\MyEvents.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Attendee\Index.cshtml" />
-    <Content Include="Views\Event\AddContactToEvent.cshtml" />
     <Content Include="Views\Attendee\AddConttactToEvent.cshtml" />
     <Content Include="Views\Contact\MyContacts.cshtml" />
     <Content Include="Views\Event\ShowEvent.cshtml" />
