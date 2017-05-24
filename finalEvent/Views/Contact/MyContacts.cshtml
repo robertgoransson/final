@@ -1,26 +1,31 @@
 ﻿@model IEnumerable<finalEvent.Models.Contact>
-
+<link href="@Url.Content("~/Content/site.css")" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "View";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row">
+    <div class="col-md-12">
+        <div class="container-fluid bg-1 text-center">
+            <h2>Mina kontakter</h2>
 
-<h2>Mina kontakter</h2>
+            <table class="table">
+                <tr></tr>
 
-<table class="table">
-    <tr>
-    </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReceiverEmail)
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReceiverEmail)
-           
-        </td>
-        <td>
-            @Html.ActionLink("Ta bort kontakt", "DeleteContact", new { id=item.ContactId })
-        </td>
-    </tr>
-}
+                        </td>
+                        <td>
+                            @Html.ActionLink("Ta bort kontakt", "DeleteContact", null, new { id = item.ContactId , @class = "my-class", style = "color: black" })
+                        </td>
+                    </tr>
+                }
 
-</table>
+            </table>
+</div>
+</div>
+</div>

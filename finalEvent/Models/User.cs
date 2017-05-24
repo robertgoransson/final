@@ -16,8 +16,8 @@ namespace finalEvent.Models
 
         [Required]
         [DataType("Password")]
-        [RegularExpression(@"^(?=.*[a-zåäö])(?=.*[A-ZÅÄÖ])(?=.*\d)[a-zA-Z\d]{6,}$", ErrorMessage ="Lösen ska vara minst fem tecken långt och ska innehålla Stor bokstav, liten bokstav och minst en siffra.")]
-        [StringLength(20, MinimumLength = 6)]
+        [RegularExpression(@"^(?=.*\d)(?=.*[a-zåäöA-ZÅÄÖ]).{5,15}$", ErrorMessage ="Lösen ska vara minst fem tecken långt, högst 15 tecken långt och ska innehålla minst en siffra och minst en bokstav.")]
+        [StringLength(15, MinimumLength = 5)]
         
         public string Password { get; set; }
 
@@ -38,7 +38,7 @@ namespace finalEvent.Models
         [Required]
         [RegularExpression(@"^[0-9]+$", ErrorMessage ="Telefonummer får endast innehålla siffror.")]
         public string Phonenumber { get; set; }
-
+       
         public string Picture { get; set; }
 
         public virtual ICollection<Event> Events { get; set; }

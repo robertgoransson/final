@@ -267,6 +267,30 @@
     <Compile Include="Migrations\201705181123153_regex.Designer.cs">
       <DependentUpon>201705181123153_regex.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705190911269_dsfsdf1.cs" />
+    <Compile Include="Migrations\201705190911269_dsfsdf1.Designer.cs">
+      <DependentUpon>201705190911269_dsfsdf1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231136146_regexbild.cs" />
+    <Compile Include="Migrations\201705231136146_regexbild.Designer.cs">
+      <DependentUpon>201705231136146_regexbild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705241041012_taborregexbild.cs" />
+    <Compile Include="Migrations\201705241041012_taborregexbild.Designer.cs">
+      <DependentUpon>201705241041012_taborregexbild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705241056565_heeeej.cs" />
+    <Compile Include="Migrations\201705241056565_heeeej.Designer.cs">
+      <DependentUpon>201705241056565_heeeej.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705241103051_dsdsf.cs" />
+    <Compile Include="Migrations\201705241103051_dsdsf.Designer.cs">
+      <DependentUpon>201705241103051_dsdsf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705241105497_sfjdsfsd.cs" />
+    <Compile Include="Migrations\201705241105497_sfjdsfsd.Designer.cs">
+      <DependentUpon>201705241105497_sfjdsfsd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactList.cs" />
@@ -432,6 +456,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705181123153_regex.resx">
       <DependentUpon>201705181123153_regex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705190911269_dsfsdf1.resx">
+      <DependentUpon>201705190911269_dsfsdf1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231136146_regexbild.resx">
+      <DependentUpon>201705231136146_regexbild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241041012_taborregexbild.resx">
+      <DependentUpon>201705241041012_taborregexbild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241056565_heeeej.resx">
+      <DependentUpon>201705241056565_heeeej.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241103051_dsdsf.resx">
+      <DependentUpon>201705241103051_dsdsf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241105497_sfjdsfsd.resx">
+      <DependentUpon>201705241105497_sfjdsfsd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

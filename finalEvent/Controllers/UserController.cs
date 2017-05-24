@@ -97,7 +97,7 @@ namespace finalEvent.Controllers
                     {
                         var user = new User
                         {
-                            Picture = Path.GetFileName(file.FileName),
+                            
 
                             Email = newUser.Email,
                             Password = newUser.Password,

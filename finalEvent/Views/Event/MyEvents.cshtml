@@ -5,41 +5,44 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Mina skapade event</h2>
 
+<div class="container-fluid bg-1 text-center">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h2>Mina skapade event</h2>
+        </div>
+    </div>
+</div>
 <table class="table">
     <tr>
 
         <th>
-            Evenemang
+            Evenemang:
         </th>
         <th>
-            Datum
+            Datum:
         </th>
 
-        <th>
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
+        @foreach (var item in Model)
+        {
+                <tr>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.EventName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
-                @Html.ActionLink("Ta bort Event", "Delete", new { id = item.EventId })
-                @Html.ActionLink("Deltagare", "Attendee", new { id= item.EventId})
-                @Html.ActionLink("Till eventet", "ShowEvent","Event", new { id = item.EventId }, null)
-            </td>
-        </tr>
-    }
 
-</table>
+                    <td style="color:white">
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+                    <td style="color: white">
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+
+
+                        @Html.ActionLink("Ta bort event", "Delete", null, new { id = item.EventId, style = "color: black" })  |
+
+                        @Html.ActionLink("Till eventet", "ShowEvent", "Event", new { id = item.EventId, style = "color: black" }, null)
+                    </td>
+                </tr>
+        }
+
+    </table>

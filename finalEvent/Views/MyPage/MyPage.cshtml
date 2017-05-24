@@ -3,21 +3,24 @@
     ViewBag.Title = "MyPage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<br />
-<h2>Välkommen till din profilsida @Model.Firstname</h2>
-<p> Här kan du ändra dina uppgifter och administrera dina kontakter och event.</p>
-<br />
-<div><img src="~/images/profile/@Model.Picture" width="150" height="150" />   </div>
+<div class="container-fluid bg-1 text-center">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h2>Välkommen till din profilsida @Model.Firstname</h2>
+            </div>
+        </div>
+    </div>
+            <br />
+            <div><img src="~/images/profile/@Model.Picture" width="150" height="150" />   </div>
 
 
-@using (Html.BeginForm("EditPicture", "MyPage", FormMethod.Post,
+            @using (Html.BeginForm("EditPicture", "MyPage", FormMethod.Post,
                                         new { enctype = "multipart/form-data" }))
-{
-    <label for="file">Ladda upp bild:</label>
-    <input type="file" name="file" id="file" style="width: 100%;" />
-    <input type="submit" value="Upload" class="submit" />
-    <p>Just nu är det inte möjligt att ladda upp bilder med specialtecken i filnamnet.</p>
-}
+            {
+                <label for="file">Ladda upp bild:</label>
+                <input type="file" name="file" id="file" style="width: 100%;" />
+                <input type="submit" value="Upload" class="submit" />
+                <p>Just nu är det inte möjligt att ladda upp bilder med specialtecken i filnamnet.</p>
+            }
 
 

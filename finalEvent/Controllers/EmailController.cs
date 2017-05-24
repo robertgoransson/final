@@ -48,7 +48,7 @@ namespace finalEvent.Controllers
 
 
 
-                    var body = "<p>Inbjudan från:{0} {1}</br>Kul! Nu har även du lyckats bli inbjuden till ett evenemang din populäre jäkel. Följ länken nedan</p></br> <a href=\"http://www.grabbhelg.nu/\">Till Evenemanget</a>";
+                    var body = "<p>Inbjudan från:{0} {1}</br>Kul! Börja använda eventplaneraren du med.</p></br><p>Tryck på länken nedan</p></br> <a href=\"http://www.grabbhelg.nu/\">Till eventplaneraren</a>";
 
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(email));
@@ -69,7 +69,7 @@ namespace finalEvent.Controllers
                     smtp.Port = 587;
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(message);
-                    return RedirectToAction("Sent", "Home");
+                    return RedirectToAction("SendEmail", "Email");
                 }
 
 

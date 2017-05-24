@@ -3,12 +3,16 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<br />
-<br />
-<br />
-<br />
-<h2>Här kan du ändra dina personliga uppgifter.</h2>
+
+<div class="container-fluid bg-1 text-center">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h2>Ändra dina användaruppgifter</h2>
+
+        </div>
+    </div>
+</div>
+
 
 @using (Html.BeginForm("EditUser", "MyPage", FormMethod.Post,
                                              new { enctype = "multipart/form-data" }))
@@ -21,7 +25,7 @@
 
         <div class="form-group">
 
-            <div class="col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 @Html.EditorFor(u => u.Email, new { htmlAttributes = new { placeholder = "E-post", @class = "form-control" } })
                 @Html.ValidationMessageFor(u => u.Email, "", new { @class = "text-danger" })
             </div>
@@ -29,7 +33,7 @@
 
         <div class="form-group">
 
-            <div class="col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 @Html.EditorFor(u => u.Password, new { htmlAttributes = new { placeholder = "Lösenord", @class = "form-control" } })
                 @Html.ValidationMessageFor(u => u.Password, "", new { @class = "text-danger" })
             </div>
@@ -37,7 +41,7 @@
 
         <div class="form-group">
 
-            <div class="col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 @Html.EditorFor(u => u.ConfirmPassword, new { htmlAttributes = new { placeholder = "Bekräfta Lösenord", @class = "form-control" } })
                 @Html.ValidationMessageFor(u => u.ConfirmPassword, "", new { @class = "text-danger" })
             </div>
@@ -45,7 +49,7 @@
 
         <div class="form-group">
 
-            <div class="col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 @Html.EditorFor(u => u.Firstname, new { htmlAttributes = new { placeholder = "Förnamn", @class = "form-control" } })
                 @Html.ValidationMessageFor(u => u.Firstname, "", new { @class = "text-danger" })
             </div>
@@ -53,7 +57,7 @@
 
         <div class="form-group">
 
-            <div class="col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 @Html.EditorFor(u => u.Lastname, new { htmlAttributes = new { placeholder = "Efternamn", @class = "form-control" } })
                 @Html.ValidationMessageFor(u => u.Lastname, "", new { @class = "text-danger" })
             </div>
@@ -61,20 +65,16 @@
 
         <div class="form-group">
 
-            <div class="col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 @Html.EditorFor(u => u.Phonenumber, new { htmlAttributes = new { placeholder = "Telefonnummer", @class = "form-control" } })
                 @Html.ValidationMessageFor(u => u.Phonenumber, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-md-10">
-                <input type="file" name="file" id="file" style="width: 100%;" /> <br />
+       
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8">
+                    <input type="submit" value="Ändra uppgifter nu" class="btn btn-primary btn-lg btn-block" />
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Ändra uppgifter nu" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
 }
